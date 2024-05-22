@@ -68,3 +68,14 @@ export const updateTask = async (
   }
   return await response.json();
 };
+
+export const mapObjectToTaskPartial = (data:TaskPartial):TaskPartial =>{
+  const task:TaskPartial = {};
+  if(data.hasOwnProperty("description")){
+    task.description = data.description;
+  }
+  if(data.hasOwnProperty("isCompleted")){
+    task.isCompleted = data.isCompleted?.toString() === "on";
+  }
+  return task;
+}
