@@ -1,42 +1,32 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { createTask, getAllTasks } from "../services/task-services";
+import { FormEvent, useContext, useEffect, useRef, useState } from "react";
+import { createTask, getAllTasks, mapObjectToTaskPartial } from "../services/task-services";
 import { Task ,TaskPartial} from "../services/api-responses.interface";
 import TasksList from "../components/TasksList/TasksList";
 import { faAdd, faTag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskForm from "../components/TaskForm/TaskForm";
+import CategoriesContextProvider from "../context/CategoriesContext";
+
 
 const TasksPage = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [openModal,setOpenModal] = useState(false);
   const inputRef = useRef<null | HTMLInputElement>(null);
+  
   useEffect(() => {
     getAllTasks()
-      .then((data) => setTasks(data))
+      .then((data) => {
+        setTasks(data);
+        console.log(data);
+  })
       .catch((e) => console.warn(e));
   }, []);
   const handleCreate = (data:FormData):void => {
-    const newTask:TaskPartial = Object.fromEntries(data.entries());
+    console.log(Object.fromEntries(data.entries()));
+    const newTask:TaskPartial = mapObjectToTaskPartial(Object.fromEntries(data.entries()));
+    console.log(newTask);
     createTask(newTask)
       .then(task=>tasks.push(task));
-    
-    //e.preventDefault();
-    //const formValues = formRef?.current;
-    //if(formValues){
-      // const taskData:TaskPartial ={"description":"","isCompleted":false};
-      // const formData = new FormData(formValues); 
-      // if(formData){
-      //   taskData.description = formData.get("description")?.toString();
-      //   taskData.isCompleted = formData?.get("isCompleted")==="on";
-        
-        // createTask(taskData)
-        // .then(task=>{
-        //   tasks.push(task); 
-        // });
-        
-      //}
-   //   formRef?.current?.submit();
-    //}
   };
   
   const openForm = (e:React.MouseEvent):void => {
@@ -51,7 +41,8 @@ const TasksPage = () => {
   }
 
   return (
-  <>
+  <CategoriesContextProvider>
+    <>
     <div className="p-2 min-h-screen w-4/5 border rounded-lg flex-column  bg-stone-100">
       <h1 className="text-xl md:text-4xl font-mono italic text-rose-500 p-2 text-center">To Do List</h1>
       <TasksList taskList = {tasks}/>
@@ -69,6 +60,8 @@ const TasksPage = () => {
     </div>
     {openModal && <TaskForm mode={"create"} closeForm={closeForm} task={{"description":inputRef.current?.value}} saveTask={handleCreate}/>}
   </>
+  </CategoriesContextProvider>
+  
   );
 };
 

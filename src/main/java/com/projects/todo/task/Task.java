@@ -2,16 +2,24 @@ package com.projects.todo.task;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.projects.todo.category.Category;
+
+import jakarta.annotation.Nullable;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Min;
 
 @Entity()
 @Table(name = "task")
@@ -26,15 +34,44 @@ public class Task {
   @Column
   boolean isCompleted;
 
-  @Override
-  public String toString() {
-    return "Task [id=" + id + ", description=" + description + ", isCompleted=" + isCompleted + ", createdAt="
-        + createdAt + ", updatedAt=" + updatedAt + "]";
+  @Column
+  @Temporal(TemporalType.TIMESTAMP)
+  Date updatedAt;
+
+  public Date getDueDate() {
+    return dueDate;
+  }
+
+  public void setDueDate(Date dueDate) {
+    this.dueDate = dueDate;
   }
 
   @Column
   @Temporal(TemporalType.TIMESTAMP)
   Date createdAt;
+
+  @Column(nullable = true)
+  @Temporal(TemporalType.TIMESTAMP)
+  Date dueDate;
+
+  @ManyToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "category_id")
+  @JsonIgnoreProperties("posts")
+  private Category category;
+
+  public Category getCategory() {
+    return category;
+  }
+
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+
+  @Override
+  public String toString() {
+    return "Task [id=" + id + ", description=" + description + ", isCompleted=" + isCompleted + ", updatedAt="
+        + updatedAt + ", createdAt=" + createdAt + ", dueDate=" + dueDate + ", category=" + category + "]";
+  }
 
   public Long getId() {
     return id;
@@ -55,10 +92,6 @@ public class Task {
   public Date getUpdatedAt() {
     return updatedAt;
   }
-
-  @Column
-  @Temporal(TemporalType.TIMESTAMP)
-  Date updatedAt;
 
   public void setDescription(String description) {
     this.description = description;

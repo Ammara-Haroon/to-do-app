@@ -9,7 +9,9 @@ import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Locale.Category;
 
+import org.apache.coyote.BadRequestException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +33,16 @@ public class TaskController {
   TaskService taskService;
 
   @PostMapping()
-  public ResponseEntity<Task> createTask(@Valid @RequestBody CreateTaskDTO data) {
-    Task createdTask = this.taskService.create(data);
-    return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
+  public ResponseEntity<Task> createTask(@Valid @RequestBody CreateTaskDTO data) throws BadRequestException {
+    Task createdTask;
+    logger.info(String.format("Created a new task %s", data.toString()));
+    try {
+      createdTask = this.taskService.create(data);
+      logger.info(String.format("Created a new task %s", createdTask.toString()));
+      return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
+    } catch (ServiceValidationException e) {
+      throw new BadRequestException(e.generateMessage());
+    }
   }
 
   @GetMapping()
@@ -53,10 +62,20 @@ public class TaskController {
 
   @PatchMapping("/{id}")
   public ResponseEntity<Task> updateTaskById(@PathVariable Long id, @Valid @RequestBody UpdateTaskDTO data)
-      throws NotFoundException {
-    Optional<Task> maybeTask = this.taskService.updateById(id, data);
-    Task updatedTask = maybeTask.orElseThrow(() -> new NotFoundException(Task.class, id));
-    logger.info(String.format("Updating Task with id %s", id));
+      throws NotFoundException, BadRequestException {
+    Task updatedTask = null;
+    logger.info(String.format("Updating Task with id %s to %s", id, data));
+
+    try {
+      updatedTask = this.taskService.updateById(id, data);
+    } catch (ServiceValidationException e) {
+      if (e.contains("Category")) {
+        throw new BadRequestException(e.generateMessage());// Category.class, data.getCategoryId());
+      }
+      if (e.contains("Task")) {
+        throw new NotFoundException(Task.class, id);
+      }
+    }
     return new ResponseEntity<>(updatedTask, HttpStatus.OK);
 
   }

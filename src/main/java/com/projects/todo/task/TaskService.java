@@ -5,6 +5,9 @@ import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.projects.todo.category.Category;
+import com.projects.todo.category.CategoryService;
 import com.projects.todo.exceptions.ServiceValidationException;
 import com.projects.todo.exceptions.ValidationErrors;
 import jakarta.transaction.Transactional;
@@ -18,9 +21,26 @@ public class TaskService {
   @Autowired
   private TaskRepository repo;
 
-  public Task create(CreateTaskDTO data) {
+  @Autowired
+  private CategoryService categoryService;
+
+  public Task create(CreateTaskDTO data) throws ServiceValidationException {
     Task newTask = mapper.map(data, Task.class);
+    ValidationErrors errors = new ValidationErrors();
+    Long categoryId = data.getCategoryId();
+    if (categoryId != null) {
+      Optional<Category> maybeCategory = this.categoryService.findById(categoryId);
+      if (maybeCategory.isEmpty()) {
+        errors.addError("category", String.format("Category with id %s does not exist", categoryId));
+      } else {
+        newTask.setCategory(maybeCategory.get());
+      }
+    }
+    if (errors.hasErrors()) {
+      throw new ServiceValidationException(errors);
+    }
     return this.repo.save(newTask);
+
   }
 
   public List<Task> findAll() {
@@ -41,16 +61,27 @@ public class TaskService {
     this.repo.delete(maybeTask.get());
   }
 
-  public Optional<Task> updateById(Long id, UpdateTaskDTO data) {
+  public Task updateById(Long id, UpdateTaskDTO data) throws ServiceValidationException {
+    ValidationErrors errors = new ValidationErrors();
     Optional<Task> maybeTask = this.findById(id);
     if (maybeTask.isEmpty()) {
-      return maybeTask;
+      errors.addError("Task", String.format("Task with id %s does not exist", id));
+      throw new ServiceValidationException(errors);
     }
-
     Task foundTask = maybeTask.get();
+    Long categoryId = data.getCategoryId();
+    if (categoryId != null) {
+      Optional<Category> maybeCategory = this.categoryService.findById(categoryId);
+      if (maybeCategory.isEmpty()) {
+        errors.addError("Category", String.format("Category with id %s does not exist", categoryId));
+        throw new ServiceValidationException(errors);
+      } else {
+        foundTask.setCategory(maybeCategory.get());
+      }
+    }
     mapper.map(data, foundTask);
     Task updatedTask = this.repo.save(foundTask);
-    return Optional.of(updatedTask);
+    return updatedTask;
   }
 
 }

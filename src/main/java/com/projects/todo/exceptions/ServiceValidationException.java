@@ -26,4 +26,8 @@ public class ServiceValidationException extends Exception {
     }
   }
 
+  public boolean contains(String className) {
+    return this.errors.contains(className);
+  }
+
 }

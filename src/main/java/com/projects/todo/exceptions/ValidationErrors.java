@@ -34,4 +34,8 @@ public class ValidationErrors {
     return Collections.unmodifiableMap(this.errors);
   }
 
+  public boolean contains(String key) {
+    return this.errors.containsKey(key);
+  }
+
 }

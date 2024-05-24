@@ -1,5 +1,6 @@
 import { Task, TaskPartial } from "./api-responses.interface";
 import { baseUrl } from "./api-config";
+import dayjs from "dayjs";
 //import { BlogFormData } from "../components/BlogPostForm/schema";
 
 export const getAllTasks = async (): Promise<Task[]> => {
@@ -25,6 +26,9 @@ export const getTaskById = async (
 export const createTask = async (
   data: TaskPartial
 ): Promise<Task> => {
+  console.log("sending");
+
+  console.log(data);
   const response = await fetch(baseUrl + "/tasks", {
     method: "POST",
     body: JSON.stringify(data),
@@ -69,13 +73,23 @@ export const updateTask = async (
   return await response.json();
 };
 
-export const mapObjectToTaskPartial = (data:TaskPartial):TaskPartial =>{
+export const mapObjectToTaskPartial = (data:any):TaskPartial =>{
   const task:TaskPartial = {};
   if(data.hasOwnProperty("description")){
     task.description = data.description;
   }
   if(data.hasOwnProperty("isCompleted")){
     task.isCompleted = data.isCompleted?.toString() === "on";
+  }
+  if(data.hasOwnProperty("category")){
+    task.categoryId = parseInt(data.category);
+  }
+  if(data.hasOwnProperty("dueDate")){
+    const dateStr = data.dueDate.split("/");
+    console.log(dateStr,parseInt(dateStr[2]),parseInt(dateStr[1]),parseInt(dateStr[0]));
+    console.log(new Date(parseInt(dateStr[2]),parseInt(dateStr[1]),parseInt(dateStr[0])));
+
+    task.dueDate = new Date(parseInt(dateStr[2]),parseInt(dateStr[1])-1,parseInt(dateStr[0]));
   }
   return task;
 }
