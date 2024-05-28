@@ -23,7 +23,7 @@ interface TaskFormProps {
 const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
   const {categories} = useCategoriesContext();
   const [isCompleted,setIsCompleted] = useState(task?.isCompleted);
-  const [dueDate, setDueDate] = useState(task?.dueDate);
+  const [dueDate, setDueDate] = useState<Date|undefined>(task?.dueDate);
   
   let descriptionStyleClass = "resize-none w-11/12 text-ellipsis px-2 text-lg text-rose-400 text-ellipsis";
   descriptionStyleClass += isCompleted ? " line-through" : "";
@@ -36,7 +36,7 @@ const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
     //event.preventDefault();
     saveTask(new FormData(event.currentTarget));
   }
-
+console.log(task);
   return (
   <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -56,7 +56,7 @@ const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
                       </div>
                       <div>
                         <label className="text-sm font-semibold text-rose-600" htmlFor="category">Select category: </label>
-                        <select className="text-rose-500 text-sm" defaultValue = {task?.category?.name|| "Default"} name="category" id="category">
+                        <select className="text-rose-500 text-sm" defaultValue = {task?.category?.id} name="category" id="category">
                           <option value="null">Default</option>
                           {categories.map(category=><option key={category.id} value={category.id}>{category.name}</option>
                           )}
@@ -69,7 +69,7 @@ const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
                         }
                         {dueDate && <>
                         <DatePicker className="inline-flex w-full justify-space rounded-md  px-3 py-2 text-sm font-semibold sm:w-auto text-rose-500 mr-2" name="dueDate" id="dueDate" selected={dueDate}   dateFormat="dd/MM/yyyy" locale="en-AU" onChange={(date:Date) => setDueDate(date)} />
-                        <button className="text-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700  sm:w-auto bg-rose-500" onClick={()=>setDueDate(null)} >
+                        <button className="text-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700  sm:w-auto bg-rose-500" onClick={()=>setDueDate(undefined)} >
                         <FontAwesomeIcon className="px-2" icon={faXmark}/>
                         </button></>
                         }

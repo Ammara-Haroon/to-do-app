@@ -3,8 +3,35 @@ import { baseUrl } from "./api-config";
 import dayjs from "dayjs";
 //import { BlogFormData } from "../components/BlogPostForm/schema";
 
-export const getAllTasks = async (): Promise<Task[]> => {
-  const response = await fetch(baseUrl + "/tasks");
+export interface QueryParams {
+  isCompleted?:boolean,
+  categoryId?:number,
+  sortBy?:string,
+  sortOrder?:string
+}
+const getQueryString = (queryParams:QueryParams):string=>{
+  let queryString = "";
+  if(queryParams.isCompleted) {
+    queryString += `isCompleted=${queryParams.isCompleted}`;
+  }
+  if(queryParams.categoryId) {
+    queryString += `&categoryId=${queryParams.categoryId}`;
+  }
+  if(queryParams.sortBy) {
+    queryString += `&sortBy=${queryParams.sortBy}`;
+  }
+  if(queryParams.sortOrder) {
+    queryString += `&sortOrder=${queryParams.sortOrder}`;
+  }
+  
+  if(queryString) {
+    queryString = "?" + queryString;
+  }
+  return queryString;
+}
+export const getAllTasks = async (queryParams:QueryParams): Promise<Task[]> => {
+  console.log("bringing queryparams",getQueryString(queryParams));
+  const response = await fetch(`${baseUrl}/tasks${getQueryString(queryParams)}`);
   if (!response.ok) {
     throw new Error("Failed to fetch all tasks");
   }
@@ -93,3 +120,4 @@ export const mapObjectToTaskPartial = (data:any):TaskPartial =>{
   }
   return task;
 }
+

@@ -1,26 +1,49 @@
-import { FormEvent, useContext, useEffect, useRef, useState } from "react";
-import { createTask, getAllTasks, mapObjectToTaskPartial } from "../services/task-services";
+import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from "react";
+import { QueryParams, createTask, getAllTasks, mapObjectToTaskPartial } from "../services/task-services";
 import { Task ,TaskPartial} from "../services/api-responses.interface";
 import TasksList from "../components/TasksList/TasksList";
 import { faAdd, faTag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskForm from "../components/TaskForm/TaskForm";
 import CategoriesContextProvider from "../context/CategoriesContext";
+import Tabs from "../components/Tabs/Tabs";
 
-
+interface SortSelectOption {
+  label:string,
+  sortOrder:string,
+  sortBy:string
+}
 const TasksPage = () => {
+  const initialQuery:QueryParams = {};
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [incompleteTasks, setIncompleteTasks] = useState<Task[]>([]);
   const [openModal,setOpenModal] = useState(false);
   const inputRef = useRef<null | HTMLInputElement>(null);
-  
+  const [queryParams,setQueryParams] = useState(initialQuery); 
+  const sortOptions:SortSelectOption[] = 
+  [
+    {label:"Date Created ASC",sortOrder:"ASC",sortBy:"createdAt"},
+    {label:"Date Created DESC",sortOrder:"DESC",sortBy:"createdAt"},
+    {label:"Last Updated ASC",sortOrder:"ASC",sortBy:"updatedAt"},
+    {label:"Last Updated DESC",sortOrder:"DESC",sortBy:"updatedAt"},
+    {label:"A-Z",sortOrder:"ASC",sortBy:"description"},
+    {label:"Z-A",sortOrder:"DESC",sortBy:"description"},
+    {label: "Due Date ASC",sortOrder:"ASC",sortBy:"dueDate"},
+    {label:"Due Date DESC",sortOrder:"DESC",sortBy:"dueDate"}
+  ];
+
   useEffect(() => {
-    getAllTasks()
+    console.log("getting all tasks with query",queryParams);
+    getAllTasks(queryParams)
       .then((data) => {
         setTasks(data);
         console.log(data);
-  })
+      })
       .catch((e) => console.warn(e));
-  }, []);
+      
+      
+  }, [queryParams]);
+
   const handleCreate = (data:FormData):void => {
     console.log(Object.fromEntries(data.entries()));
     const newTask:TaskPartial = mapObjectToTaskPartial(Object.fromEntries(data.entries()));
@@ -40,11 +63,52 @@ const TasksPage = () => {
     handleCreate(new FormData(event.currentTarget));
   }
 
+  const getFilteredTasks = (categoryId:number):void => {
+    if(categoryId){
+     setQueryParams((prev) => ({...prev, categoryId}));
+    } else {
+     setQueryParams((prev) => ({...prev, categoryId:undefined}));
+    }
+  }
+  const sortTasks = (e: ChangeEvent<HTMLSelectElement>) => {
+    console.log(e.currentTarget.value);
+    const selected:SortSelectOption = sortOptions[parseInt(e.currentTarget.value)]; 
+    setQueryParams((prev) => ({...prev, sortOrder:selected.sortOrder,sortBy:selected.sortBy}));
+    // switch(e.currentTarget.value){
+    //   case "Date Created ASC":
+    //     break;
+    //   case "Date Created DESC":
+    //     break;
+    //   case "Last Updated ASC":
+    //     break;
+    //   case "Last Updated DESC":
+    //     break;
+    //   case "A-Z":
+    //     break;
+    //   case "Z-A":
+    //     break;
+    //   case "Category ASC":
+    //     break;
+    //   case "Category DESC":
+    //     break;
+    //   case "Due Date ASC":
+    //     break;
+    //   case "Due Date DESC":
+    //     break;
+    
+  }
   return (
   <CategoriesContextProvider>
     <>
     <div className="p-2 min-h-screen w-4/5 border rounded-lg flex-column  bg-stone-100">
       <h1 className="text-xl md:text-4xl font-mono italic text-rose-500 p-2 text-center">To Do List</h1>
+    <Tabs handleClick={getFilteredTasks}/>
+    <div className="flex justify-end">
+      <label className="text-rose-500 text-sm font-semibold" htmlFor="sortOption">Sort by:</label>
+    <select name="sortOption" onChange={sortTasks} className="text-rose-500 text-sm self-end">
+      {sortOptions.map((op,index) => <option key={index} value={index}>{op.label}</option>)}
+    </select>
+    </div>
       <TasksList taskList = {tasks}/>
       <form className="flex bg-rose-500 p-2 sticky bottom-0 w-full"  onSubmit={handleAddNew}>
         <input className="w-11/12 px-1" name="description" ref={inputRef} type="text" maxLength={200} placeholder="new task..."/>

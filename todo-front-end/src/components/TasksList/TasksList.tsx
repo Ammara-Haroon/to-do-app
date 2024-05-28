@@ -33,6 +33,7 @@ const handleEdit = (id:number,updatesToTask:TaskPartial) =>{
           handleDelete={handleDelete}
         />
       ))}
+      {tasks.length===0 && <p className='m-2 text-slate-500 text-sm text-center'>No tasks here</p>}
   </div>)
 }
 
