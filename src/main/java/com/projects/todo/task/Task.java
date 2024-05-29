@@ -2,6 +2,8 @@ package com.projects.todo.task;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.projects.todo.category.Category;
 
@@ -28,13 +30,13 @@ public class Task {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
 
-  @Column
+  @Column(nullable = false)
   String description;
 
-  @Column
+  @Column(nullable = false)
   boolean isCompleted;
 
-  @Column
+  @Column(nullable = true)
   @Temporal(TemporalType.TIMESTAMP)
   Date updatedAt;
 
@@ -46,7 +48,7 @@ public class Task {
     this.dueDate = dueDate;
   }
 
-  @Column
+  @Column(nullable = false)
   @Temporal(TemporalType.TIMESTAMP)
   Date createdAt;
 
@@ -54,8 +56,8 @@ public class Task {
   @Temporal(TemporalType.TIMESTAMP)
   Date dueDate;
 
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(name = "category_id")
+  @ManyToOne()
+  @JoinColumn(name = "category_id", nullable = true)
   @JsonIgnoreProperties("posts")
   private Category category;
 
@@ -107,6 +109,7 @@ public class Task {
     createdAt = timeStamp;
     updatedAt = timeStamp;
     isCompleted = false;
+
   }
 
   @PreUpdate

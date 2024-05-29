@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.projects.todo.exceptions.ServiceValidationException;
 import com.projects.todo.exceptions.ValidationErrors;
@@ -24,7 +25,7 @@ public class CategoryService {
   }
 
   public List<Category> findAll() {
-    return this.repo.findAll();
+    return this.repo.findAll(Sort.by("name").ascending());
   }
 
   public Optional<Category> findById(Long id) {

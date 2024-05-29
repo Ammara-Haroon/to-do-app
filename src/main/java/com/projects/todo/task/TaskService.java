@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.projects.todo.category.Category;
@@ -43,8 +45,41 @@ public class TaskService {
 
   }
 
-  public List<Task> findAll() {
-    return this.repo.findAll();
+  // public List<Task> findAll(Boolean isCompleted, Long categoryId, SortBy
+  // sortBy, SortOrder sortOrder) {
+  public List<Task> findAll(Long categoryId, SortBy sortBy, SortOrder sortOrder) {
+    // Sort sort = null;
+    Sort sort = Sort.by("isCompleted").ascending();
+    if (sortBy != null) {
+      if (sortOrder.equals(SortOrder.ASC)) {
+        sort = sort.and(Sort.by(sortBy.toString()).ascending());
+      } else {
+        sort = sort.and(Sort.by(sortBy.toString()).descending());
+      }
+    } else {
+      sort = sort.and(Sort.by(SortBy.updatedAt.toString()).descending());
+    }
+
+    if (categoryId == null) {
+      return this.repo.findAll(sort);
+    }
+
+    return this.repo.findByCategoryId(categoryId, sort);
+
+    // // if (isCompleted == null && categoryId == null) {
+    // // return this.repo.findAll(sort);
+    // // }
+
+    // if (categoryId == null) {
+    // return this.repo.findByIsCompleted(isCompleted, sort);
+    // }
+
+    // if (isCompleted == null) {
+    // return this.repo.findByCategoryId(categoryId, sort);
+    // }
+    // return this.repo.findByIsCompletedAndCategoryId(isCompleted, categoryId,
+    // sort);
+
   }
 
   public Optional<Task> findById(Long id) {
@@ -84,4 +119,31 @@ public class TaskService {
     return updatedTask;
   }
 
+  public Task overwriteById(Long id, UpdateTaskDTO data) throws ServiceValidationException {
+    ValidationErrors errors = new ValidationErrors();
+    Optional<Task> maybeTask = this.findById(id);
+    if (maybeTask.isEmpty()) {
+      errors.addError("Task", String.format("Task with id %s does not exist", id));
+      throw new ServiceValidationException(errors);
+    }
+    Task foundTask = maybeTask.get();
+    Long categoryId = data.getCategoryId();
+    if (categoryId != null) {
+      Optional<Category> maybeCategory = this.categoryService.findById(categoryId);
+      if (maybeCategory.isEmpty()) {
+        errors.addError("Category", String.format("Category with id %s does not exist", categoryId));
+        throw new ServiceValidationException(errors);
+      } else {
+        foundTask.setCategory(maybeCategory.get());
+      }
+    } else {
+      foundTask.setCategory(null);
+    }
+    mapper.map(data, foundTask);
+    if (data.getDueDate() == null) {
+      foundTask.dueDate = null;
+    }
+    Task updatedTask = this.repo.save(foundTask);
+    return updatedTask;
+  }
 }

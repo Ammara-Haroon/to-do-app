@@ -20,10 +20,10 @@ public class Category {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   Long id;
 
-  @Column
+  @Column(nullable = false)
   String name;
 
-  @Column
+  @Column(nullable = true)
   String icon;
 
   @Override

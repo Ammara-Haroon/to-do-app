@@ -1,6 +1,4 @@
-import { setServers } from 'dns';
 import { useCategoriesContext } from '../../context/CategoriesContext';
-import ErrMsg from '../ErrMsg/ErrMsg';
    
    interface TabsProps{
       handleClick:(category:number)=>void;
