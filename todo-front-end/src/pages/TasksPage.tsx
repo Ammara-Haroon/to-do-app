@@ -7,25 +7,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskForm from "../components/TaskForm/TaskForm";
 import CategoriesContextProvider from "../context/CategoriesContext";
 import Tabs from "../components/Tabs/Tabs";
+import { deleteTask } from "../services/task-services";
 
 interface SortSelectOption {
   label:string,
   sortOrder:string,
   sortBy:string
 }
+
 const TasksPage = () => {
   const initialQuery:QueryParams = {};
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [incompleteTasks, setIncompleteTasks] = useState<Task[]>([]);
   const [openModal,setOpenModal] = useState(false);
   const inputRef = useRef<null | HTMLInputElement>(null);
   const [queryParams,setQueryParams] = useState(initialQuery); 
   const sortOptions:SortSelectOption[] = 
   [
-    {label:"Date Created ASC",sortOrder:"ASC",sortBy:"createdAt"},
-    {label:"Date Created DESC",sortOrder:"DESC",sortBy:"createdAt"},
     {label:"Last Updated ASC",sortOrder:"ASC",sortBy:"updatedAt"},
     {label:"Last Updated DESC",sortOrder:"DESC",sortBy:"updatedAt"},
+    {label:"Date Created ASC",sortOrder:"ASC",sortBy:"createdAt"},
+    {label:"Date Created DESC",sortOrder:"DESC",sortBy:"createdAt"},
     {label:"A-Z",sortOrder:"ASC",sortBy:"description"},
     {label:"Z-A",sortOrder:"DESC",sortBy:"description"},
     {label: "Due Date ASC",sortOrder:"ASC",sortBy:"dueDate"},
@@ -48,8 +49,8 @@ const TasksPage = () => {
     console.log(Object.fromEntries(data.entries()));
     const newTask:TaskPartial = mapObjectToTaskPartial(Object.fromEntries(data.entries()));
     console.log(newTask);
-    createTask(newTask)
-      .then(task=>tasks.push(task));
+    createTask(newTask);
+      //.then(task=>tasks.push(task));
   };
   
   const openForm = (e:React.MouseEvent):void => {
@@ -74,29 +75,16 @@ const TasksPage = () => {
     console.log(e.currentTarget.value);
     const selected:SortSelectOption = sortOptions[parseInt(e.currentTarget.value)]; 
     setQueryParams((prev) => ({...prev, sortOrder:selected.sortOrder,sortBy:selected.sortBy}));
-    // switch(e.currentTarget.value){
-    //   case "Date Created ASC":
-    //     break;
-    //   case "Date Created DESC":
-    //     break;
-    //   case "Last Updated ASC":
-    //     break;
-    //   case "Last Updated DESC":
-    //     break;
-    //   case "A-Z":
-    //     break;
-    //   case "Z-A":
-    //     break;
-    //   case "Category ASC":
-    //     break;
-    //   case "Category DESC":
-    //     break;
-    //   case "Due Date ASC":
-    //     break;
-    //   case "Due Date DESC":
-    //     break;
-    
   }
+
+  // const handleEdit = (id: number, updatesToTask: TaskPartial) => void {
+    
+  // }
+
+  // const handleDelete = (id:number): void => {
+  //   deleteTask(id);
+  // }
+
   return (
   <CategoriesContextProvider>
     <>
@@ -111,7 +99,7 @@ const TasksPage = () => {
     </div>
       <TasksList taskList = {tasks}/>
       <form className="flex bg-rose-500 p-2 sticky bottom-0 w-full"  onSubmit={handleAddNew}>
-        <input className="w-11/12 px-1" name="description" ref={inputRef} type="text" maxLength={200} placeholder="new task..."/>
+        <input className="w-11/12 px-1" name="description" required ref={inputRef} type="text" maxLength={200} placeholder="new task..."/>
         <div className="pl-1">
         <button className="p-1 hover:shadow-lg border rounded  border-transparent hover:border-rose-100 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none" type="submit">
           <FontAwesomeIcon icon={faAdd} size="lg"/>

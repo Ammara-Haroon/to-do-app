@@ -86,6 +86,7 @@ export const deleteTask = async (
 export const updateTask = async (
   id:number,data: TaskPartial
 ): Promise<Task> => {
+  console.log("updating task to" ,data);
   const response = await fetch(`${baseUrl}/tasks/${id}`, {
     method: "PATCH",
     body: JSON.stringify(data),
@@ -100,23 +101,63 @@ export const updateTask = async (
   return await response.json();
 };
 
+export const overwriteTask = async (
+  id:number,data: TaskPartial
+): Promise<Task> => {
+  console.log("updating task to" ,data);
+  const response = await fetch(`${baseUrl}/tasks/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  if (!response.ok) {
+    console.log(response.status);
+    throw new Error("Failed to update task");
+  }
+  return await response.json();
+};
+
 export const mapObjectToTaskPartial = (data:any):TaskPartial =>{
   const task:TaskPartial = {};
-  if(data.hasOwnProperty("description")){
+  if(data?.description){
     task.description = data.description;
   }
-  if(data.hasOwnProperty("isCompleted")){
+  if(data?.isCompleted){
     task.isCompleted = data.isCompleted?.toString() === "on";
   }
-  if(data.hasOwnProperty("category")){
+  if(data?.category && parseInt(data.category)){
     task.categoryId = parseInt(data.category);
   }
-  if(data.hasOwnProperty("dueDate")){
+  if(data?.dueDate){
     const dateStr = data.dueDate.split("/");
-    console.log(dateStr,parseInt(dateStr[2]),parseInt(dateStr[1]),parseInt(dateStr[0]));
-    console.log(new Date(parseInt(dateStr[2]),parseInt(dateStr[1]),parseInt(dateStr[0])));
-
     task.dueDate = new Date(parseInt(dateStr[2]),parseInt(dateStr[1])-1,parseInt(dateStr[0]));
+  }
+  return task;
+}
+
+export const fillTask = (data:any):TaskPartial =>{
+  const task:TaskPartial = {};
+  
+  if(data?.description){
+    task.description = data.description;
+  } 
+  if(data?.isCompleted){
+    task.isCompleted = data.isCompleted?.toString() === "on";
+  } else {
+    data.isCompleted = false;
+  }
+  if(data?.category && parseInt(data.category)){
+    task.categoryId = parseInt(data.category);
+  } else {
+    task.categoryId = null;
+  }
+  if(data?.dueDate){
+    const dateStr = data.dueDate.split("/");
+    task.dueDate = new Date(parseInt(dateStr[2]),parseInt(dateStr[1])-1,parseInt(dateStr[0]));
+  } else {
+    task.dueDate = null;
   }
   return task;
 }

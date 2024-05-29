@@ -10,6 +10,7 @@ import { faArrowAltCircleDown, faArrowLeft, faCalendar, faCheck, faCross, faXmar
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { registerLocale, setDefaultLocale } from  "react-datepicker";
 import { enAU } from 'date-fns/locale/en-AU';
+import { updateTask } from "../../services/task-services";
 registerLocale('en-AU', enAU);
 dayjs.extend(relativeTime);
 
@@ -23,20 +24,23 @@ interface TaskFormProps {
 const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
   const {categories} = useCategoriesContext();
   const [isCompleted,setIsCompleted] = useState(task?.isCompleted);
-  const [dueDate, setDueDate] = useState<Date|undefined>(task?.dueDate);
+  const [dueDate, setDueDate] = useState<Date|null>(task?.dueDate ?? null);
   
   let descriptionStyleClass = "resize-none w-11/12 text-ellipsis px-2 text-lg text-rose-400 text-ellipsis";
   descriptionStyleClass += isCompleted ? " line-through" : "";
 
   const handleIsCompleted = ()=>{
     setIsCompleted(!isCompleted);
+    updateTask
   }
   function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-    console.log(new FormData(event.currentTarget));
+    //console.log(new FormData(event.currentTarget));
     //event.preventDefault();
     saveTask(new FormData(event.currentTarget));
+    //event.currentTarget.reset();
+    //closeForm();
   }
-console.log(task);
+//console.log(task);
   return (
   <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -51,7 +55,7 @@ console.log(task);
                   <form onSubmit={handleSubmit} className='flex-column items-start w-full'>
                       <div className='p-5 w-full flex'>
                         {mode === "edit" && <input  className="m-2 self-start" type="checkbox"  name="isCompleted" id="isCompleted" defaultChecked={task?.isCompleted} onChange={handleIsCompleted}/>}
-                        <textarea placeholder="new task ..." className={descriptionStyleClass} name="description" id="description" defaultValue={task?.description}
+                        <textarea required placeholder="new task ..." className={descriptionStyleClass} name="description" id="description" defaultValue={task?.description}
                         />
                       </div>
                       <div>
@@ -69,7 +73,7 @@ console.log(task);
                         }
                         {dueDate && <>
                         <DatePicker className="inline-flex w-full justify-space rounded-md  px-3 py-2 text-sm font-semibold sm:w-auto text-rose-500 mr-2" name="dueDate" id="dueDate" selected={dueDate}   dateFormat="dd/MM/yyyy" locale="en-AU" onChange={(date:Date) => setDueDate(date)} />
-                        <button className="text-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700  sm:w-auto bg-rose-500" onClick={()=>setDueDate(undefined)} >
+                        <button className="text-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700  sm:w-auto bg-rose-500" onClick={()=>setDueDate(null)} >
                         <FontAwesomeIcon className="px-2" icon={faXmark}/>
                         </button></>
                         }

@@ -4,9 +4,9 @@ export interface TaskPartial {
   createdAt?: string;
   updatedAt?: string;
   description?: string;
-  categoryId? : number;
-  dueDate?: Date;
-  category?:Category;
+  categoryId? : number|null;
+  dueDate?: Date|null;
+  category?:Category|null;
 }
 export interface Task{
   isCompleted: boolean;

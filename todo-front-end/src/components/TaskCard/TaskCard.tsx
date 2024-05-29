@@ -6,31 +6,33 @@ import { faCheck, faExclamationTriangle, faPencil, faTrash} from "@fortawesome/f
 import TaskForm from '../TaskForm/TaskForm';
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { updateTask , mapObjectToTaskPartial} from '../../services/task-services';
+import { updateTask , mapObjectToTaskPartial, fillTask} from '../../services/task-services';
 dayjs.extend(relativeTime);
 
 interface TaskCardProps {
   task: Task,
   handleEdit(id:number,updatesToTask:TaskPartial):void,
+  handleOverwrite(id:number,updatesToTask:TaskPartial):void,
   handleDelete(id:number):void
 }
-const TaskCard = ({task,handleEdit,handleDelete}:TaskCardProps) => {
+const TaskCard = ({task,handleEdit,handleDelete,handleOverwrite}:TaskCardProps) => {
   const [isEditMode,setIsEditMode] = useState(false);
   const [isCompleted,setIsCompleted] = useState(task.isCompleted);
   const taskRef = useRef<null | HTMLTextAreaElement>(null);
   const isOverDue = task.dueDate && !task.isCompleted && !dayjs().isBefore(task.dueDate);
   let descriptionStyleClass = "w-11/12 flex items-center px-2 text-lg";
   descriptionStyleClass += task.isCompleted ? " text-stone-400 line-through" : " text-rose-400";
-  descriptionStyleClass += isOverDue ? " text-rose-600" : " text-rose-400";
-  let dueDateStyleClass = "resize-none w-11/12  px-2 text-sm overflow-hidden text-ellipsis  font-bold";
-  dueDateStyleClass += isOverDue ? " text-red-600" : " text-rose-400";
+  descriptionStyleClass += isOverDue ? " text-rose-600 italic" : " text-rose-500";
+  let dueDateStyleClass = "resize-none w-11/12  px-2 text-sm overflow-hidden text-ellipsis ";
+  dueDateStyleClass += isOverDue ? " text-red-600" : " text-rose-500";
   
   const handleIsCompleted = (e:ChangeEvent<HTMLInputElement>)=>{
-    e.target.checked = !(isCompleted);
-    console.log(!isCompleted);
+    //e.target.checked = !(isCompleted);
+    //console.log(!isCompleted);
+    
     handleEdit(task.id,{"isCompleted":!isCompleted});
     setIsCompleted(!isCompleted);
-
+    
   }
   const handleClick = ()=>{
     // if(isEditMode){
@@ -41,9 +43,9 @@ const TaskCard = ({task,handleEdit,handleDelete}:TaskCardProps) => {
  
   const updateTask = (data:FormData) => {
     const dataObj:TaskPartial = Object.fromEntries(data.entries());
-    const updatedTask = mapObjectToTaskPartial(dataObj);
+    const updatedTask = fillTask(dataObj);
     console.log(updatedTask);
-    handleEdit(task.id,updatedTask);
+    handleOverwrite(task.id,updatedTask);
     //setIsEditMode(false);   
 
   }
