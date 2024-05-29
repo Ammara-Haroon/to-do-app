@@ -1,16 +1,14 @@
 import { Task, TaskPartial } from "../../services/api-responses.interface"
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { FormEvent, useContext, useEffect, useState } from "react";
-import CategoriesContext, { ICategoriesContext, useCategoriesContext } from "../../context/CategoriesContext";
-import { getAllCategories } from "../../services/category-services";
+import { FormEvent, useState } from "react";
+import { useCategoriesContext } from "../../context/CategoriesContext";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { faArrowAltCircleDown, faArrowLeft, faCalendar, faCheck, faCross, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faCalendar, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import { registerLocale } from  "react-datepicker";
 import { enAU } from 'date-fns/locale/en-AU';
-import { updateTask } from "../../services/task-services";
 registerLocale('en-AU', enAU);
 dayjs.extend(relativeTime);
 
@@ -31,16 +29,10 @@ const TaskForm = ({mode, task, closeForm, saveTask}:TaskFormProps) => {
 
   const handleIsCompleted = ()=>{
     setIsCompleted(!isCompleted);
-    updateTask
   }
-  function handleSubmit(event: FormEvent<HTMLFormElement>): void {
-    //console.log(new FormData(event.currentTarget));
-    //event.preventDefault();
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     saveTask(new FormData(event.currentTarget));
-    //event.currentTarget.reset();
-    //closeForm();
   }
-//console.log(task);
   return (
   <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>

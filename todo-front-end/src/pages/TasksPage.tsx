@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useContext, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { QueryParams, createTask, getAllTasks, mapObjectToTaskPartial } from "../services/task-services";
 import { Task ,TaskPartial} from "../services/api-responses.interface";
 import TasksList from "../components/TasksList/TasksList";
@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TaskForm from "../components/TaskForm/TaskForm";
 import CategoriesContextProvider from "../context/CategoriesContext";
 import Tabs from "../components/Tabs/Tabs";
-import { deleteTask } from "../services/task-services";
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
+import ErrMsg from "../components/ErrMsg/ErrMsg";
 
 interface SortSelectOption {
   label:string,
@@ -21,6 +22,9 @@ const TasksPage = () => {
   const [openModal,setOpenModal] = useState(false);
   const inputRef = useRef<null | HTMLInputElement>(null);
   const [queryParams,setQueryParams] = useState(initialQuery); 
+   const [error, setError] = useState<string|null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
   const sortOptions:SortSelectOption[] = 
   [
     {label:"Last Updated ASC",sortOrder:"ASC",sortBy:"updatedAt"},
@@ -34,33 +38,31 @@ const TasksPage = () => {
   ];
 
   useEffect(() => {
-    console.log("getting all tasks with query",queryParams);
+    setIsLoading(true);
+    setError(null);
     getAllTasks(queryParams)
-      .then((data) => {
-        setTasks(data);
-        console.log(data);
-      })
-      .catch((e) => console.warn(e));
-      
-      
+      .then((data) => setTasks(data))
+      .catch((e) => setError(e.message))
+      .finally(() => setIsLoading(false));
   }, [queryParams]);
 
   const handleCreate = (data:FormData):void => {
-    console.log(Object.fromEntries(data.entries()));
     const newTask:TaskPartial = mapObjectToTaskPartial(Object.fromEntries(data.entries()));
-    console.log(newTask);
-    createTask(newTask);
-      //.then(task=>tasks.push(task));
+    try{
+      createTask(newTask);
+    } catch(e:any) {
+      setError(e.message);
+    }
   };
   
   const openForm = (e:React.MouseEvent):void => {
     e.preventDefault();
     setOpenModal(true);
   }
-  function closeForm(): void {
+  const closeForm = (): void => {
     setOpenModal(false);
   }
-  function handleAddNew(event: FormEvent<HTMLFormElement>): void {
+  const handleAddNew = (event: FormEvent<HTMLFormElement>): void => {
     handleCreate(new FormData(event.currentTarget));
   }
 
@@ -72,23 +74,17 @@ const TasksPage = () => {
     }
   }
   const sortTasks = (e: ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.currentTarget.value);
     const selected:SortSelectOption = sortOptions[parseInt(e.currentTarget.value)]; 
     setQueryParams((prev) => ({...prev, sortOrder:selected.sortOrder,sortBy:selected.sortBy}));
   }
-
-  // const handleEdit = (id: number, updatesToTask: TaskPartial) => void {
-    
-  // }
-
-  // const handleDelete = (id:number): void => {
-  //   deleteTask(id);
-  // }
-
+  const closeMsg = () => {
+    setError(null);
+  }
   return (
   <CategoriesContextProvider>
-    <>
-    <div className="p-2 min-h-screen w-4/5 border rounded-lg flex-column  bg-stone-100">
+    {isLoading && <LoadingSpinner />}
+    {!isLoading && error && <ErrMsg msg={error} closeMsg={closeMsg}/>}
+    {!isLoading && <div className="p-2 min-h-screen w-4/5 border rounded-lg flex-column  bg-stone-100">
       <h1 className="text-xl md:text-4xl font-mono italic text-rose-500 p-2 text-center">To Do List</h1>
     <Tabs handleClick={getFilteredTasks}/>
     <div className="flex justify-end">
@@ -109,11 +105,9 @@ const TasksPage = () => {
         </button>
         </div>
       </form>
-    </div>
+    </div>}
     {openModal && <TaskForm mode={"create"} closeForm={closeForm} task={{"description":inputRef.current?.value}} saveTask={handleCreate}/>}
-  </>
   </CategoriesContextProvider>
-  
   );
 };
 

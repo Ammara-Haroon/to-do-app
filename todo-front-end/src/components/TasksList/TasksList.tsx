@@ -1,36 +1,52 @@
-
 import TaskCard from '../TaskCard/TaskCard'
 import { deleteTask, overwriteTask, updateTask } from '../../services/task-services';
 import { useEffect, useState } from 'react';
 import {Task, TaskPartial}  from '../../services/api-responses.interface';
+import ErrMsg from '../ErrMsg/ErrMsg';
 
 interface TasksListProps {
   taskList: Task[];
-  // editTask: (id:number,updatesToTask:TaskPartial)=>void;
-  // deleteTask: (id:number)=>void;
 }
 
 const TasksList = ({taskList}:TasksListProps) => {
-const [tasks,setTasks] = useState<Task[]>([]);
-useEffect(()=>{
-  setTasks(taskList);
-},[taskList]);
+  const [tasks,setTasks] = useState<Task[]>([]);
+  const [error,setError] = useState<string|null>(null);
+  
+  useEffect(()=>{
+    setTasks(taskList);
+  },[taskList]);
+  
   const handleEdit = (id:number,updatesToTask:TaskPartial) =>{
     const index = tasks.findIndex(tsk=>tsk.id==id);
     Object.assign(tasks[index],updatesToTask);  
-    updateTask(id,updatesToTask);
+    try {
+      updateTask(id,updatesToTask);
+    } catch(e:any) {
+      setError(e.message);
+    }
   }
   const handleDelete = (id:number) =>{
     setTasks(tasks.filter(task=>task.id !== id));
-    deleteTask(id);
+    try {
+      deleteTask(id);
+    }
+    catch(e:any) {
+      setError(e.message);
+    }
   }
   const handleOverwrite = (id:number,updatesToTask:TaskPartial) =>{
     const index = tasks.findIndex(tsk=>tsk.id==id);
     Object.assign(tasks[index],updatesToTask); 
-    overwriteTask(id,updatesToTask);
-
+    try {
+      overwriteTask(id,updatesToTask);
+    }
+    catch(e:any) {
+      setError(e.message);
+    }
   }
   return (
+    <>
+    {error && <ErrMsg msg={error} closeMsg={()=>setError(null)}/>}
     <div className='w-full border border-rose-300 overflow-y-auto '>
       {tasks.map((task) => (
         <TaskCard
@@ -42,7 +58,8 @@ useEffect(()=>{
         />
       ))}
       {tasks.length===0 && <p className='m-2 text-slate-500 text-sm text-center'>No tasks here</p>}
-  </div>)
+  </div>
+  </>)
 }
 
 export default TasksList

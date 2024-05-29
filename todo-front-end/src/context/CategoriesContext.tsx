@@ -6,32 +6,27 @@ export const useCategoriesContext = () => useContext(CategoriesContext);
 
 export interface ICategoriesContext {
   categories: Category[];
-  //setCategories: (categories: Category[]) => void;
+  error:string|null;
 }
 
 const defaults: ICategoriesContext = {
   categories: [],
- // setCategories: (data) => console.log(data),
+  error:null,
 };
-
 export const CategoriesContext = createContext<ICategoriesContext>(defaults);
-
-interface CategoriesContextProviderProps {
-  children: string | JSX.Element | JSX.Element[]
-}
-
 export const CategoriesContextProvider = ({children}:{
     children: React.ReactNode;
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [error, setError] = useState<string|null>(null);
   useEffect(() => {
     getAllCategories()
       .then((data) => setCategories(data))
-      .catch((e) => console.warn(e));
+      .catch((e) => setError(e.message));
   }, []);
 
   return (
-    <CategoriesContext.Provider value={{categories}}>
+    <CategoriesContext.Provider value={{categories,error}}>
       {children}
     </CategoriesContext.Provider>
   );

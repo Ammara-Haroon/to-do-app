@@ -1,12 +1,11 @@
-
 import {Task, TaskPartial}  from '../../services/api-responses.interface';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faExclamationTriangle, faPencil, faTrash} from "@fortawesome/free-solid-svg-icons";
 import TaskForm from '../TaskForm/TaskForm';
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import { updateTask , mapObjectToTaskPartial, fillTask} from '../../services/task-services';
+import { fillTask} from '../../services/task-services';
 dayjs.extend(relativeTime);
 
 interface TaskCardProps {
@@ -18,7 +17,6 @@ interface TaskCardProps {
 const TaskCard = ({task,handleEdit,handleDelete,handleOverwrite}:TaskCardProps) => {
   const [isEditMode,setIsEditMode] = useState(false);
   const [isCompleted,setIsCompleted] = useState(task.isCompleted);
-  const taskRef = useRef<null | HTMLTextAreaElement>(null);
   const isOverDue = task.dueDate && !task.isCompleted && !dayjs().isBefore(task.dueDate);
   let descriptionStyleClass = "w-11/12 flex items-center px-2 text-lg";
   descriptionStyleClass += task.isCompleted ? " text-stone-400 line-through" : " text-rose-400";
@@ -26,30 +24,20 @@ const TaskCard = ({task,handleEdit,handleDelete,handleOverwrite}:TaskCardProps) 
   let dueDateStyleClass = "resize-none w-11/12  px-2 text-sm overflow-hidden text-ellipsis ";
   dueDateStyleClass += isOverDue ? " text-red-600" : " text-rose-500";
   
-  const handleIsCompleted = (e:ChangeEvent<HTMLInputElement>)=>{
-    //e.target.checked = !(isCompleted);
-    //console.log(!isCompleted);
-    
+  const handleIsCompleted = ()=>{ 
     handleEdit(task.id,{"isCompleted":!isCompleted});
     setIsCompleted(!isCompleted);
-    
   }
   const handleClick = ()=>{
-    // if(isEditMode){
-    //   handleEdit(task.id,{"description":taskRef?.current?.value});
-    // }
     setIsEditMode(!isEditMode);   
   }
  
   const updateTask = (data:FormData) => {
     const dataObj:TaskPartial = Object.fromEntries(data.entries());
     const updatedTask = fillTask(dataObj);
-    console.log(updatedTask);
     handleOverwrite(task.id,updatedTask);
-    //setIsEditMode(false);   
-
   }
-  function closeForm(): void {
+  const closeForm = (): void => {
     setIsEditMode(false);
   }
 

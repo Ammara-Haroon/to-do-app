@@ -1,7 +1,5 @@
 import { Task, TaskPartial } from "./api-responses.interface";
 import { baseUrl } from "./api-config";
-import dayjs from "dayjs";
-//import { BlogFormData } from "../components/BlogPostForm/schema";
 
 export interface QueryParams {
   isCompleted?:boolean,
@@ -30,7 +28,6 @@ const getQueryString = (queryParams:QueryParams):string=>{
   return queryString;
 }
 export const getAllTasks = async (queryParams:QueryParams): Promise<Task[]> => {
-  console.log("bringing queryparams",getQueryString(queryParams));
   const response = await fetch(`${baseUrl}/tasks${getQueryString(queryParams)}`);
   if (!response.ok) {
     throw new Error("Failed to fetch all tasks");
@@ -44,8 +41,7 @@ export const getTaskById = async (
 ): Promise<Task> => {
   const response = await fetch(`${baseUrl}/tasks/${id}`);
   if (!response.ok) {
-    console.log(response.status);
-    throw new Error("Failed to fetch task");
+    throw new Error(`Failed to fetch task for id ${id}`);
   }
   return await response.json();
 };
@@ -53,9 +49,6 @@ export const getTaskById = async (
 export const createTask = async (
   data: TaskPartial
 ): Promise<Task> => {
-  console.log("sending");
-
-  console.log(data);
   const response = await fetch(baseUrl + "/tasks", {
     method: "POST",
     body: JSON.stringify(data),
@@ -64,7 +57,6 @@ export const createTask = async (
     },
   });
   if (!response.ok) {
-    console.log(response.status);
     throw new Error("Failed to create task");
   }
   return await response.json();
@@ -77,7 +69,6 @@ export const deleteTask = async (
     method: "DELETE",
   });
   if (!response.ok) {
-    console.log(response.status);
     throw new Error("Failed to delete task");
   }
   
@@ -86,7 +77,6 @@ export const deleteTask = async (
 export const updateTask = async (
   id:number,data: TaskPartial
 ): Promise<Task> => {
-  console.log("updating task to" ,data);
   const response = await fetch(`${baseUrl}/tasks/${id}`, {
     method: "PATCH",
     body: JSON.stringify(data),
@@ -95,7 +85,6 @@ export const updateTask = async (
     },
   });
   if (!response.ok) {
-    console.log(response.status);
     throw new Error("Failed to update task");
   }
   return await response.json();
@@ -104,7 +93,6 @@ export const updateTask = async (
 export const overwriteTask = async (
   id:number,data: TaskPartial
 ): Promise<Task> => {
-  console.log("updating task to" ,data);
   const response = await fetch(`${baseUrl}/tasks/${id}`, {
     method: "PUT",
     body: JSON.stringify(data),
@@ -113,8 +101,7 @@ export const overwriteTask = async (
     },
   });
   if (!response.ok) {
-    console.log(response.status);
-    throw new Error("Failed to update task");
+    throw new Error("Failed to overwrite task");
   }
   return await response.json();
 };
