@@ -93,6 +93,7 @@ To run backend run the spring boot app. Server runs on port 8080.
 
 -   Added a loading spinner and error message component to front end   
 
+### 30/05/2024 - Added background color to selected tab
 
 ## Struggles
 
