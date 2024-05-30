@@ -1,8 +1,14 @@
-# Title To-Do App
+# To-Do App
 
 ## Demo & Snippets
-
-
+### Main Page With Sorted, Completed and Overdue Tasks
+![Overdue and completed tasks](image-3.png)
+### Add/Edit Task Form
+![Form](image-1.png)
+### Category Filtered Tasks
+![Category](image-2.png)
+### Swagger API Doc
+![alt text](image-4.png)
 ## Requirements / Purpose
 
 ### Purpose 
@@ -64,28 +70,29 @@ To run backend run the spring boot app. Server runs on port 8080.
 
 ## Change logs
 
-### 22/05/2024 - {Created basic todo app}
+### 22/05/2024 - Created basic todo app
 
 -   Created backend end points to update, delete and edit tasks and added error handling  
 -   Added a simple form to add and edit task at the front end
 
-### 24/05/2024 - {Created entity category}
+### 24/05/2024 - Created entity category
 
 -   Created backend end points to update, delete and edit category and added error handling  
 -   Updated task endpoints to cater for category and added error handling for trying to associate an invalid category with the task
 
-### 28/05/2024 - {Added sorting and filtering}
+### 28/05/2024 - Added sorting and filtering
 
 -   Changed queries to handle sorting and filtering at the backend  
 -   Added components at the front-end to facilitate sorting and filtering
 
-### 29/05/2024 - {sorting and filtering}
+### 29/05/2024 - sorting and filtering
 
 -   Changed ModelMapper, DTO and entity to debug issues in delete and updating to a null due date or category   
 
-### 29/05/2024 - {error handling and loading}
+### 29/05/2024 - error handling and loading
 
 -   Added a loading spinner and error message component to front end   
+
 
 ## Struggles
 

@@ -1,498 +1,276 @@
-2024-05-29T08:23:49.034+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 12888 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T08:23:49.098+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T08:23:49.342+10:00  INFO 12888 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-29T08:23:49.345+10:00  INFO 12888 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-29T08:23:53.141+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T08:23:53.404+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 223 ms. Found 2 JPA repository interfaces.
-2024-05-29T08:23:56.149+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T08:23:56.198+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T08:23:56.202+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T08:23:56.440+10:00  INFO 12888 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-29T08:23:56.443+10:00  INFO 12888 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7094 ms
-2024-05-29T08:23:57.255+10:00  INFO 12888 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T08:23:57.606+10:00  INFO 12888 --- [todo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-29T08:23:57.852+10:00  INFO 12888 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T08:23:59.047+10:00  INFO 12888 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T08:23:59.169+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-29T08:24:00.674+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29c925cf
-2024-05-29T08:24:00.686+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-29T08:24:06.314+10:00  INFO 12888 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T08:24:06.613+10:00  INFO 12888 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T08:24:11.076+10:00  WARN 12888 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T08:24:13.124+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T08:24:13.313+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T08:24:13.365+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 26.553 seconds (process running for 28.874)
-2024-05-29T08:24:51.447+10:00  INFO 12888 --- [todo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 23 deletions, 0 modifications)
-2024-05-29T08:24:51.494+10:00  INFO 12888 --- [todo] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T08:24:51.653+10:00  INFO 12888 --- [todo] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-29T08:24:51.882+10:00  INFO 12888 --- [todo] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-29T08:24:57.978+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 12888 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T08:24:57.981+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T08:24:59.081+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T08:24:59.126+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
-2024-05-29T08:24:59.477+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T08:24:59.482+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T08:24:59.486+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T08:24:59.556+10:00  INFO 12888 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2024-05-29T08:24:59.566+10:00  INFO 12888 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1571 ms
-2024-05-29T08:24:59.702+10:00  INFO 12888 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T08:24:59.724+10:00  INFO 12888 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T08:24:59.750+10:00  INFO 12888 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T08:24:59.767+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-05-29T08:24:59.818+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3dc9ebcd
-2024-05-29T08:24:59.820+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-05-29T08:25:00.125+10:00  INFO 12888 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T08:25:00.176+10:00  INFO 12888 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T08:25:00.857+10:00  WARN 12888 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T08:25:01.370+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T08:25:01.410+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T08:25:01.425+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 3.551 seconds (process running for 76.934)
-2024-05-29T08:25:01.438+10:00  INFO 12888 --- [todo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-05-29T08:25:03.822+10:00  INFO 12888 --- [todo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 23 deletions, 0 modifications)
-2024-05-29T08:25:03.851+10:00  INFO 12888 --- [todo] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T08:25:03.910+10:00  INFO 12888 --- [todo] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2024-05-29T08:25:03.953+10:00  INFO 12888 --- [todo] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2024-05-29T08:25:07.064+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 12888 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T08:25:07.066+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T08:25:07.570+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T08:25:07.610+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2024-05-29T08:25:07.870+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T08:25:07.873+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T08:25:07.875+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T08:25:07.974+10:00  INFO 12888 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2024-05-29T08:25:07.976+10:00  INFO 12888 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 906 ms
-2024-05-29T08:25:08.084+10:00  INFO 12888 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T08:25:08.097+10:00  INFO 12888 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T08:25:08.111+10:00  INFO 12888 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T08:25:08.123+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2024-05-29T08:25:08.176+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33c38865
-2024-05-29T08:25:08.185+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2024-05-29T08:25:08.343+10:00  INFO 12888 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T08:25:08.388+10:00  INFO 12888 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T08:25:08.806+10:00  WARN 12888 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T08:25:09.047+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T08:25:09.070+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T08:25:09.078+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 2.062 seconds (process running for 84.586)
-2024-05-29T08:25:09.081+10:00  INFO 12888 --- [todo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-05-29T09:16:24.865+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-29T09:16:24.898+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-29T09:16:24.954+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
-2024-05-29T09:16:25.997+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:16:26.083+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:16:26.192+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:16:26.321+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:29:48.528+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding, categoryId=null, dueDate=null]
-2024-05-29T09:29:48.752+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Created a new task Task [id=48, description=Do coding, isCompleted=false, updatedAt=Wed May 29 09:29:48 AEST 2024, createdAt=Wed May 29 09:29:48 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:29:51.386+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding, categoryId=null, dueDate=null]
-2024-05-29T09:29:51.400+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task Task [id=49, description=Do coding, isCompleted=false, updatedAt=Wed May 29 09:29:51 AEST 2024, createdAt=Wed May 29 09:29:51 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:30:02.578+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:30:10.290+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding, categoryId=null, dueDate=null]
-2024-05-29T09:30:10.306+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Created a new task Task [id=50, description=Do coding, isCompleted=false, updatedAt=Wed May 29 09:30:10 AEST 2024, createdAt=Wed May 29 09:30:10 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:30:44.809+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:30:52.825+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding 4, categoryId=null, dueDate=null]
-2024-05-29T09:30:52.840+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task Task [id=51, description=Do coding 4, isCompleted=false, updatedAt=Wed May 29 09:30:52 AEST 2024, createdAt=Wed May 29 09:30:52 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:30:53.560+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:30:53.560+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:30:53.616+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:30:53.647+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:31:00.041+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:31:13.131+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding again, categoryId=null, dueDate=null]
-2024-05-29T09:31:13.152+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task Task [id=52, description=Do coding again, isCompleted=false, updatedAt=Wed May 29 09:31:13 AEST 2024, createdAt=Wed May 29 09:31:13 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:31:48.798+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:31:55.273+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding again 2, categoryId=null, dueDate=null]
-2024-05-29T09:31:55.302+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Created a new task Task [id=53, description=Do coding again 2, isCompleted=false, updatedAt=Wed May 29 09:31:55 AEST 2024, createdAt=Wed May 29 09:31:55 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:31:56.006+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:31:56.037+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:31:56.059+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:31:56.155+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:37:21.417+10:00  INFO 12888 --- [todo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2024-05-29T09:37:21.663+10:00  INFO 12888 --- [todo] [Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T09:37:21.689+10:00  INFO 12888 --- [todo] [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2024-05-29T09:37:21.721+10:00  INFO 12888 --- [todo] [Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2024-05-29T09:37:22.429+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 12888 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T09:37:22.432+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T09:37:23.716+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T09:37:23.771+10:00  INFO 12888 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
-2024-05-29T09:37:24.379+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T09:37:24.390+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T09:37:24.394+10:00  INFO 12888 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T09:37:24.591+10:00  INFO 12888 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2024-05-29T09:37:24.595+10:00  INFO 12888 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2145 ms
-2024-05-29T09:37:24.772+10:00  INFO 12888 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T09:37:24.787+10:00  INFO 12888 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T09:37:24.812+10:00  INFO 12888 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T09:37:24.819+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2024-05-29T09:37:24.875+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d1b914b
-2024-05-29T09:37:24.878+10:00  INFO 12888 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2024-05-29T09:37:25.197+10:00  INFO 12888 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T09:37:25.446+10:00  INFO 12888 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T09:37:26.343+10:00  WARN 12888 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T09:37:27.041+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T09:37:27.162+10:00  INFO 12888 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T09:37:27.203+10:00  INFO 12888 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 5.022 seconds (process running for 4422.712)
-2024-05-29T09:37:27.212+10:00  INFO 12888 --- [todo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2024-05-29T09:38:24.830+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-29T09:38:24.833+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-29T09:38:24.838+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-05-29T09:38:43.003+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:38:43.033+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:38:43.056+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:38:43.267+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:42:26.305+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do shopping, categoryId=9, dueDate=null]
-2024-05-29T09:42:26.375+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Created a new task Task [id=54, description=Do shopping, isCompleted=false, updatedAt=Wed May 29 09:42:26 AEST 2024, createdAt=Wed May 29 09:42:26 AEST 2024, dueDate=null, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
-2024-05-29T09:43:15.263+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do shopping 2, categoryId=9, dueDate=null]
-2024-05-29T09:43:15.297+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task Task [id=55, description=Do shopping 2, isCompleted=false, updatedAt=Wed May 29 09:43:15 AEST 2024, createdAt=Wed May 29 09:43:15 AEST 2024, dueDate=null, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
-2024-05-29T09:46:44.857+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do shopping 2, categoryId=9, dueDate=null]
-2024-05-29T09:46:44.897+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Created a new task Task [id=56, description=Do shopping 2, isCompleted=false, updatedAt=Wed May 29 09:46:44 AEST 2024, createdAt=Wed May 29 09:46:44 AEST 2024, dueDate=null, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
-2024-05-29T09:46:45.606+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:46:45.624+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:46:45.669+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:46:45.715+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:47:03.965+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=do urgent, categoryId=8, dueDate=Sun Jun 02 00:00:00 AEST 2024]
-2024-05-29T09:47:03.997+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task Task [id=57, description=do urgent, isCompleted=false, updatedAt=Wed May 29 09:47:03 AEST 2024, createdAt=Wed May 29 09:47:03 AEST 2024, dueDate=Sun Jun 02 00:00:00 AEST 2024, category=Category [id=8, name=Urgent, icon=/src/assets/siren-icon.png]
-2024-05-29T09:47:04.629+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:47:04.666+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:47:04.724+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:47:04.786+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:47:08.811+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:47:22.122+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=do urgent 2, categoryId=null, dueDate=Wed May 29 00:00:00 AEST 2024]
-2024-05-29T09:47:22.138+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task Task [id=58, description=do urgent 2, isCompleted=false, updatedAt=Wed May 29 09:47:22 AEST 2024, createdAt=Wed May 29 09:47:22 AEST 2024, dueDate=Wed May 29 00:00:00 AEST 2024, category=null]
-2024-05-29T09:47:22.851+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:47:22.881+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:47:22.947+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:47:23.017+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:47:55.603+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 58 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:47:57.849+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 56 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:47:58.725+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Updating Task with id 55 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:47:59.382+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Updating Task with id 54 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:48:03.549+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:48:06.111+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:48:14.995+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 54 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:48:15.520+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Updating Task with id 55 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:48:16.079+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 56 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:48:16.983+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 58 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:51:37.929+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:51:37.941+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:51:37.974+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:51:38.072+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:51:40.724+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Deleting Task with id 58
-2024-05-29T09:51:41.233+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Deleting Task with id 56
-2024-05-29T09:51:41.676+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Deleting Task with id 55
-2024-05-29T09:51:42.142+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Deleting Task with id 54
-2024-05-29T09:51:42.357+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Deleting Task with id 57
-2024-05-29T09:51:42.915+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Deleting Task with id 53
-2024-05-29T09:51:43.105+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Deleting Task with id 52
-2024-05-29T09:51:43.307+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Deleting Task with id 51
-2024-05-29T09:51:43.651+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Deleting Task with id 50
-2024-05-29T09:51:43.887+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Deleting Task with id 49
-2024-05-29T09:51:44.112+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Deleting Task with id 48
-2024-05-29T09:51:49.513+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding, categoryId=null, dueDate=null]
-2024-05-29T09:51:49.534+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Created a new task Task [id=59, description=Do coding, isCompleted=false, updatedAt=Wed May 29 09:51:49 AEST 2024, createdAt=Wed May 29 09:51:49 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:51:50.236+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:51:50.251+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:51:50.300+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:51:50.375+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:51:54.136+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:52:06.695+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do Coding 2, categoryId=3, dueDate=null]
-2024-05-29T09:52:06.724+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task Task [id=60, description=Do Coding 2, isCompleted=false, updatedAt=Wed May 29 09:52:06 AEST 2024, createdAt=Wed May 29 09:52:06 AEST 2024, dueDate=null, category=Category [id=3, name=Office, icon=/src/assets/briefcase-icon.png]
-2024-05-29T09:52:07.283+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:52:07.339+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:52:07.361+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:52:07.378+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:52:19.596+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Urgent, categoryId=8, dueDate=Wed May 29 00:00:00 AEST 2024]
-2024-05-29T09:52:19.626+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task Task [id=61, description=Urgent, isCompleted=false, updatedAt=Wed May 29 09:52:19 AEST 2024, createdAt=Wed May 29 09:52:19 AEST 2024, dueDate=Wed May 29 00:00:00 AEST 2024, category=Category [id=8, name=Urgent, icon=/src/assets/siren-icon.png]
-2024-05-29T09:52:20.211+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:52:20.222+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:52:20.287+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:52:20.348+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:52:27.891+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:52:28.738+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:52:29.386+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:52:30.234+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T09:52:30.820+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:52:33.429+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 60 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:52:36.791+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:52:38.722+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:53:17.252+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Updating Task with id 59 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:53:18.409+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Updating Task with id 61 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:53:24.425+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:53:25.759+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:08.710+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Add a nother, categoryId=9, dueDate=Sat May 25 00:00:00 AEST 2024]
-2024-05-29T09:54:08.737+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task Task [id=62, description=Add a nother, isCompleted=false, updatedAt=Wed May 29 09:54:08 AEST 2024, createdAt=Wed May 29 09:54:08 AEST 2024, dueDate=Sat May 25 00:00:00 AEST 2024, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
-2024-05-29T09:54:09.410+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:09.443+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:09.487+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:09.552+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:13.744+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:54:15.357+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Updating Task with id 62 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:54:17.105+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:54:18.001+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T09:54:18.898+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:54:20.118+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:22.055+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Updating Task with id 59 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:54:22.628+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 61 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:54:23.336+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Updating Task with id 62 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:54:26.087+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Updating Task with id 60 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:54:27.002+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Updating Task with id 61 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:54:27.847+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Updating Task with id 61 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:54:29.763+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T09:54:30.568+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:54:31.488+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:54:32.266+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:54:33.164+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:45.620+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 59 to UpdateTaskDTO [description=Do coding, isCompleted=false, categoryId=8, dueDate=null]
-2024-05-29T09:54:46.321+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:46.356+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:46.382+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:46.447+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:49.162+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:54:49.925+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:54:50.496+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:54:51.030+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T09:54:51.996+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:57.967+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 60 to UpdateTaskDTO [description=Do Coding 2, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:54:58.692+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:58.692+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:54:58.770+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:54:58.781+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:06.685+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 62 to UpdateTaskDTO [description=Add a another, isCompleted=false, categoryId=9, dueDate=Sat May 25 00:00:00 AEST 2024]
-2024-05-29T09:55:07.248+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:07.288+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:07.355+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:07.380+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:15.163+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 62 to UpdateTaskDTO [description=Add a another, isCompleted=false, categoryId=9, dueDate=Sat Jun 01 00:00:00 AEST 2024]
-2024-05-29T09:55:15.759+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:15.786+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:15.832+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:15.843+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:30.247+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Deleting Task with id 62
-2024-05-29T09:55:30.747+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Deleting Task with id 59
-2024-05-29T09:55:31.150+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Deleting Task with id 61
-2024-05-29T09:55:32.163+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Deleting Task with id 60
-2024-05-29T09:55:35.518+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:35.527+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:35.562+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:35.583+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:42.942+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=a, categoryId=null, dueDate=null]
-2024-05-29T09:55:42.969+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task Task [id=63, description=a, isCompleted=false, updatedAt=Wed May 29 09:55:42 AEST 2024, createdAt=Wed May 29 09:55:42 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:55:43.614+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:43.634+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:43.683+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:43.722+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:47.205+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=b, categoryId=null, dueDate=null]
-2024-05-29T09:55:47.221+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task Task [id=64, description=b, isCompleted=false, updatedAt=Wed May 29 09:55:47 AEST 2024, createdAt=Wed May 29 09:55:47 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:55:47.786+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:47.819+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:47.842+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:47.880+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:50.402+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=c, categoryId=null, dueDate=null]
-2024-05-29T09:55:50.418+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task Task [id=65, description=c, isCompleted=false, updatedAt=Wed May 29 09:55:50 AEST 2024, createdAt=Wed May 29 09:55:50 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:55:50.987+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:51.016+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:51.026+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:51.067+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:53.188+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=d, categoryId=null, dueDate=null]
-2024-05-29T09:55:53.202+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Created a new task Task [id=66, description=d, isCompleted=false, updatedAt=Wed May 29 09:55:53 AEST 2024, createdAt=Wed May 29 09:55:53 AEST 2024, dueDate=null, category=null]
-2024-05-29T09:55:53.747+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:53.783+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:55:53.783+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:53.888+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:55:57.457+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:55:58.953+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=dueDate sortOrder=ASC
-2024-05-29T09:56:05.992+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
-2024-05-29T09:56:08.489+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=createdAt sortOrder=ASC
-2024-05-29T09:56:13.690+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 66 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:56:14.994+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 63 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:56:20.071+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Deleting Task with id 65
-2024-05-29T09:56:25.506+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:56:34.920+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 64 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T09:56:38.266+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=description sortOrder=ASC
-2024-05-29T09:56:38.793+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=description sortOrder=ASC
-2024-05-29T09:56:39.454+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=description sortOrder=ASC
-2024-05-29T09:56:39.923+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=description sortOrder=ASC
-2024-05-29T09:56:40.354+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T09:56:44.321+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Updating Task with id 63 to UpdateTaskDTO [description=a, isCompleted=true, categoryId=8, dueDate=null]
-2024-05-29T09:56:45.055+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:56:45.061+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:56:45.100+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:56:45.154+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:56:50.432+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Updating Task with id 64 to UpdateTaskDTO [description=b, isCompleted=true, categoryId=3, dueDate=null]
-2024-05-29T09:56:51.008+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:56:51.022+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:56:51.071+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:56:51.085+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T09:56:51.755+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:56:53.240+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:56:54.082+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:56:55.467+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Updating Task with id 63 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:56:56.015+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Updating Task with id 64 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T09:56:57.482+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T09:56:57.919+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T09:56:58.323+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T09:56:58.789+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T09:57:00.352+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T09:57:03.653+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T10:13:13.862+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:13:13.881+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:13:13.901+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:13:13.948+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:13:44.568+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:13:44.588+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:15:09.514+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:16:01.941+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:16:01.955+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:16:01.992+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:16:02.040+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:17:02.557+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:19:27.518+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T10:19:38.020+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:20:08.183+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:23:21.371+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:23:21.380+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:23:21.399+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:23:21.407+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:23:41.271+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:23:41.288+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:23:41.296+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:23:41.324+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:26:40.253+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:26:40.263+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:26:40.305+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:26:40.327+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:26:46.192+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:26:46.210+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:26:46.221+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:26:46.286+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:27:01.376+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:27:01.386+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:27:01.413+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:27:01.436+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:28:40.693+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:28:40.701+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:28:40.719+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:28:40.734+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:30:37.797+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:30:37.801+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:30:37.818+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:30:37.828+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:32:33.778+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:35:08.785+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:35:08.788+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:35:08.800+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:35:08.815+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:35:43.769+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:36:58.795+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:36:58.797+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:36:58.814+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T10:36:58.823+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:39:57.792+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:40:05.780+10:00  INFO 12888 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T10:40:17.174+10:00  INFO 12888 --- [todo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T10:40:17.179+10:00  INFO 12888 --- [todo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2024-05-29T10:40:17.188+10:00  INFO 12888 --- [todo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2024-05-29T11:06:51.280+10:00  INFO 8180 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 8180 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T11:06:51.285+10:00  INFO 8180 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T11:06:51.436+10:00  INFO 8180 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-29T11:06:51.438+10:00  INFO 8180 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-29T11:06:53.764+10:00  INFO 8180 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T11:06:53.931+10:00  INFO 8180 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 2 JPA repository interfaces.
-2024-05-29T11:06:55.253+10:00  INFO 8180 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T11:06:55.291+10:00  INFO 8180 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T11:06:55.292+10:00  INFO 8180 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T11:06:55.439+10:00  INFO 8180 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-29T11:06:55.440+10:00  INFO 8180 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4000 ms
-2024-05-29T11:06:55.915+10:00  INFO 8180 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T11:06:56.066+10:00  INFO 8180 --- [todo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-29T11:06:56.192+10:00  INFO 8180 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T11:06:56.766+10:00  INFO 8180 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T11:06:56.827+10:00  INFO 8180 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-29T11:06:57.534+10:00  INFO 8180 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cc40875
-2024-05-29T11:06:57.545+10:00  INFO 8180 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-29T11:06:59.439+10:00  INFO 8180 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T11:06:59.574+10:00  INFO 8180 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T11:07:01.452+10:00  WARN 8180 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T11:07:02.939+10:00  INFO 8180 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T11:07:03.194+10:00  INFO 8180 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T11:07:03.244+10:00  INFO 8180 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 12.883 seconds (process running for 13.694)
-2024-05-29T11:07:10.672+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-29T11:07:10.675+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-29T11:07:10.682+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2024-05-29T11:07:11.538+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:11.538+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:11.758+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:11.776+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:14.742+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 66 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T11:07:18.726+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:18.752+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:18.758+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:18.819+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:21.018+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 64 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T11:07:21.683+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Updating Task with id 63 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T11:07:27.447+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Updating Task with id 63 to UpdateTaskDTO [description=a, isCompleted=true, categoryId=3, dueDate=null]
-2024-05-29T11:07:28.293+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:28.339+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:28.349+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:28.459+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:32.197+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Deleting Task with id 66
-2024-05-29T11:07:33.003+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Deleting Task with id 64
-2024-05-29T11:07:34.172+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Deleting Task with id 63
-2024-05-29T11:07:36.722+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
-2024-05-29T11:07:38.450+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=dueDate sortOrder=ASC
-2024-05-29T11:07:40.474+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=ewrewr, categoryId=null, dueDate=null]
-2024-05-29T11:07:40.535+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Created a new task Task [id=67, description=ewrewr, isCompleted=false, updatedAt=Wed May 29 11:07:40 AEST 2024, createdAt=Wed May 29 11:07:40 AEST 2024, dueDate=null, category=null]
-2024-05-29T11:07:41.188+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:41.205+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:41.257+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:41.317+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:49.651+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Updating Task with id 67 to UpdateTaskDTO [description=Call Mum, isCompleted=true, categoryId=null, dueDate=null]
-2024-05-29T11:07:50.297+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:50.297+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:50.326+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:07:50.327+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:07:55.261+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 67 to UpdateTaskDTO [description=null, isCompleted=false, categoryId=null, dueDate=null]
-2024-05-29T11:08:02.569+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Updating Task with id 67 to UpdateTaskDTO [description=Call Mum, isCompleted=false, categoryId=8, dueDate=Wed May 29 00:00:00 AEST 2024]
-2024-05-29T11:08:03.354+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:08:03.359+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:08:03.392+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:08:03.428+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:08:05.970+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
-2024-05-29T11:08:07.245+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
-2024-05-29T11:08:07.951+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
-2024-05-29T11:08:08.561+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
-2024-05-29T11:08:09.201+10:00  INFO 8180 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:08:13.965+10:00  INFO 8180 --- [todo] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T11:08:13.971+10:00  INFO 8180 --- [todo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-05-29T11:08:13.996+10:00  INFO 8180 --- [todo] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-05-29T11:10:28.738+10:00  INFO 19872 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 19872 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
-2024-05-29T11:10:28.744+10:00  INFO 19872 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
-2024-05-29T11:10:28.863+10:00  INFO 19872 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2024-05-29T11:10:28.864+10:00  INFO 19872 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2024-05-29T11:10:32.074+10:00  INFO 19872 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-05-29T11:10:32.241+10:00  INFO 19872 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 146 ms. Found 2 JPA repository interfaces.
-2024-05-29T11:10:34.777+10:00  INFO 19872 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-05-29T11:10:34.832+10:00  INFO 19872 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-05-29T11:10:34.835+10:00  INFO 19872 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2024-05-29T11:10:35.174+10:00  INFO 19872 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-05-29T11:10:35.178+10:00  INFO 19872 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6310 ms
-2024-05-29T11:10:36.605+10:00  INFO 19872 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-05-29T11:10:37.082+10:00  INFO 19872 --- [todo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-05-29T11:10:37.546+10:00  INFO 19872 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-05-29T11:10:39.205+10:00  INFO 19872 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-05-29T11:10:39.440+10:00  INFO 19872 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-05-29T11:10:41.364+10:00  INFO 19872 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a627640
-2024-05-29T11:10:41.377+10:00  INFO 19872 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-05-29T11:10:45.979+10:00  INFO 19872 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-05-29T11:10:46.221+10:00  INFO 19872 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-05-29T11:10:50.024+10:00  WARN 19872 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-05-29T11:10:52.058+10:00  INFO 19872 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2024-05-29T11:10:52.212+10:00  INFO 19872 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2024-05-29T11:10:52.252+10:00  INFO 19872 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 24.638 seconds (process running for 25.313)
-2024-05-29T11:21:03.437+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2024-05-29T11:21:03.440+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2024-05-29T11:21:03.445+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2024-05-29T11:21:05.568+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1006 ms
-2024-05-29T11:30:51.382+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T11:30:51.381+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:30:51.434+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
-2024-05-29T11:30:51.434+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
-2024-05-29T12:15:55.408+10:00  INFO 19872 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=dcdd, categoryId=null, dueDate=null]
+2024-05-30T11:50:59.868+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 23012 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
+2024-05-30T11:50:59.932+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-05-30T11:51:00.271+10:00  INFO 23012 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-30T11:51:00.288+10:00  INFO 23012 --- [todo] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-30T11:51:05.223+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T11:51:05.487+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 214 ms. Found 2 JPA repository interfaces.
+2024-05-30T11:51:07.933+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-30T11:51:07.993+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-30T11:51:08.001+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-30T11:51:08.220+10:00  INFO 23012 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-30T11:51:08.226+10:00  INFO 23012 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7930 ms
+2024-05-30T11:51:08.837+10:00  INFO 23012 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T11:51:09.134+10:00  INFO 23012 --- [todo] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-30T11:51:09.319+10:00  INFO 23012 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T11:51:10.475+10:00  INFO 23012 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T11:51:10.622+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-30T11:51:12.351+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@710183a7
+2024-05-30T11:51:12.359+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-30T11:51:15.615+10:00  INFO 23012 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30T11:51:15.929+10:00  INFO 23012 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:51:18.756+10:00  WARN 23012 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T11:51:20.464+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-30T11:51:20.626+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-30T11:51:20.653+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 22.766 seconds (process running for 24.804)
+2024-05-30T11:51:23.075+10:00  INFO 23012 --- [todo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 23 deletions, 0 modifications)
+2024-05-30T11:51:23.105+10:00  INFO 23012 --- [todo] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:51:23.120+10:00  INFO 23012 --- [todo] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-30T11:51:23.215+10:00  INFO 23012 --- [todo] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-30T11:51:27.435+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 23012 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
+2024-05-30T11:51:27.445+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-05-30T11:51:29.060+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T11:51:29.179+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 2 JPA repository interfaces.
+2024-05-30T11:51:29.658+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-30T11:51:29.667+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-30T11:51:29.683+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-30T11:51:29.811+10:00  INFO 23012 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-30T11:51:29.814+10:00  INFO 23012 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2354 ms
+2024-05-30T11:51:30.057+10:00  INFO 23012 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T11:51:30.086+10:00  INFO 23012 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T11:51:30.111+10:00  INFO 23012 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T11:51:30.152+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-05-30T11:51:30.211+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@27760c7b
+2024-05-30T11:51:30.213+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-05-30T11:51:30.439+10:00  INFO 23012 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30T11:51:30.496+10:00  INFO 23012 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:51:31.680+10:00  WARN 23012 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T11:51:32.766+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-30T11:51:32.853+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-30T11:51:32.867+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 5.592 seconds (process running for 37.019)
+2024-05-30T11:51:32.900+10:00  INFO 23012 --- [todo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-30T11:51:34.227+10:00  INFO 23012 --- [todo] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 23 class path changes (0 additions, 23 deletions, 0 modifications)
+2024-05-30T11:51:34.325+10:00  INFO 23012 --- [todo] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:51:34.332+10:00  INFO 23012 --- [todo] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-05-30T11:51:34.464+10:00  INFO 23012 --- [todo] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-05-30T11:51:37.701+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Starting TodoApplication using Java 22.0.1 with PID 23012 (C:\Users\ammar\Nology\zambia\Projects\todo\target\classes started by ammara in C:\Users\ammar\Nology\zambia\Projects\todo)
+2024-05-30T11:51:37.707+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : No active profile set, falling back to 1 default profile: "default"
+2024-05-30T11:51:38.397+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-30T11:51:38.434+10:00  INFO 23012 --- [todo] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 2 JPA repository interfaces.
+2024-05-30T11:51:38.687+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-05-30T11:51:38.689+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-30T11:51:38.691+10:00  INFO 23012 --- [todo] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-05-30T11:51:38.755+10:00  INFO 23012 --- [todo] [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2024-05-30T11:51:38.757+10:00  INFO 23012 --- [todo] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1029 ms
+2024-05-30T11:51:38.872+10:00  INFO 23012 --- [todo] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-30T11:51:38.886+10:00  INFO 23012 --- [todo] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-30T11:51:38.902+10:00  INFO 23012 --- [todo] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-30T11:51:38.905+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2024-05-30T11:51:38.945+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41068dd7
+2024-05-30T11:51:38.947+10:00  INFO 23012 --- [todo] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2024-05-30T11:51:39.119+10:00  INFO 23012 --- [todo] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-30T11:51:39.173+10:00  INFO 23012 --- [todo] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-30T11:51:39.651+10:00  WARN 23012 --- [todo] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-30T11:51:39.945+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-05-30T11:51:39.996+10:00  INFO 23012 --- [todo] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-05-30T11:51:40.015+10:00  INFO 23012 --- [todo] [restartedMain] com.projects.todo.TodoApplication        : Started TodoApplication in 2.415 seconds (process running for 44.167)
+2024-05-30T11:51:40.031+10:00  INFO 23012 --- [todo] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-05-30T11:51:40.241+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-05-30T11:51:40.242+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-05-30T11:51:40.245+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-05-30T11:53:02.076+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T11:53:02.076+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T11:53:02.219+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T11:53:02.231+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:03:50.234+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:03:50.234+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:03:50.458+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:03:50.457+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:04:14.711+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:04:14.724+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:04:14.760+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:04:14.878+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:04:15.821+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=SHOPPING, categoryId=9, dueDate=Sun Jun 02 00:00:00 AEST 2024]
+2024-05-30T12:04:16.464+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Created a new task Task [id=69, description=SHOPPING, isCompleted=false, updatedAt=Thu May 30 12:04:16 AEST 2024, createdAt=Thu May 30 12:04:16 AEST 2024, dueDate=Sun Jun 02 00:00:00 AEST 2024, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
+2024-05-30T12:04:36.227+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Updating Task with id 68 to UpdateTaskDTO [description=dcdd, isCompleted=false, categoryId=8, dueDate=Wed May 29 00:00:00 AEST 2024]
+2024-05-30T12:04:36.850+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:04:36.917+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T12:04:36.928+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:04:37.047+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:04:54.116+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T12:04:55.313+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T12:04:57.410+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T12:04:59.605+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T12:05:01.051+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T12:05:02.945+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T12:05:05.916+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T12:05:08.290+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T12:05:12.566+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Deleting Task with id 68
+2024-05-30T14:04:08.811+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:04:08.824+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:04:08.924+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:04:08.968+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:04:30.205+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 69 to UpdateTaskDTO [description=Buy Milk, isCompleted=false, categoryId=9, dueDate=Sun Jun 02 00:00:00 AEST 2024]
+2024-05-30T14:04:30.597+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:04:30.597+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:04:30.660+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:04:30.716+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:39.052+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Work on project, categoryId=3, dueDate=Fri Jun 14 00:00:00 AEST 2024]
+2024-05-30T14:16:39.116+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Created a new task Task [id=70, description=Work on project, isCompleted=false, updatedAt=Thu May 30 14:16:39 AEST 2024, createdAt=Thu May 30 14:16:39 AEST 2024, dueDate=Fri Jun 14 00:00:00 AEST 2024, category=Category [id=3, name=Office, icon=/src/assets/briefcase-icon.png]
+2024-05-30T14:16:39.413+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:39.435+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:39.439+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:39.506+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:50.734+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Updating Task with id 67 to UpdateTaskDTO [description=Call Mum, isCompleted=false, categoryId=8, dueDate=Wed May 29 00:00:00 AEST 2024]
+2024-05-30T14:16:51.015+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:51.045+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:51.045+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:51.137+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:57.800+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 67 to UpdateTaskDTO [description=Call Mum, isCompleted=false, categoryId=8, dueDate=null]
+2024-05-30T14:16:58.082+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:58.116+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:16:58.123+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:16:58.205+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:17:23.419+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Water Plants, categoryId=null, dueDate=Tue May 28 00:00:00 AEST 2024]
+2024-05-30T14:17:23.442+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Created a new task Task [id=71, description=Water Plants, isCompleted=false, updatedAt=Thu May 30 14:17:23 AEST 2024, createdAt=Thu May 30 14:17:23 AEST 2024, dueDate=Tue May 28 00:00:00 AEST 2024, category=null]
+2024-05-30T14:17:23.863+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:17:23.867+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:17:23.908+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:17:23.950+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:17:31.800+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:17:36.187+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:17:40.845+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:17:44.864+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T14:17:49.944+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:18:00.211+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=description sortOrder=ASC
+2024-05-30T14:18:01.703+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=description sortOrder=ASC
+2024-05-30T14:18:03.439+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:18:36.727+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:21:47.783+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:22:21.793+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=ASC
+2024-05-30T14:22:27.358+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T14:22:37.688+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Do coding, categoryId=null, dueDate=null]
+2024-05-30T14:22:37.705+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Created a new task Task [id=72, description=Do coding, isCompleted=false, updatedAt=Thu May 30 14:22:37 AEST 2024, createdAt=Thu May 30 14:22:37 AEST 2024, dueDate=null, category=null]
+2024-05-30T14:22:38.114+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:22:38.143+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:22:38.157+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:22:38.228+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:22:50.094+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T14:25:14.667+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=description sortOrder=DESC
+2024-05-30T14:25:25.675+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=description sortOrder=DESC
+2024-05-30T14:25:30.897+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Bread, categoryId=null, dueDate=null]
+2024-05-30T14:25:30.907+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Created a new task Task [id=73, description=Bread, isCompleted=false, updatedAt=Thu May 30 14:25:30 AEST 2024, createdAt=Thu May 30 14:25:30 AEST 2024, dueDate=null, category=null]
+2024-05-30T14:25:31.228+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:25:31.243+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:25:31.249+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:25:31.304+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:25:50.096+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Updating Task with id 73 to UpdateTaskDTO [description=Bread, isCompleted=false, categoryId=9, dueDate=null]
+2024-05-30T14:25:50.371+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:25:50.385+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:25:50.394+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:25:50.440+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:26:12.317+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task CreateTaskDTO [description=Eggs, categoryId=9, dueDate=null]
+2024-05-30T14:26:12.335+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Created a new task Task [id=74, description=Eggs, isCompleted=false, updatedAt=Thu May 30 14:26:12 AEST 2024, createdAt=Thu May 30 14:26:12 AEST 2024, dueDate=null, category=Category [id=9, name=Shopping, icon=/src/assets/basket-icon.png]
+2024-05-30T14:26:12.672+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:26:12.694+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:26:12.701+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:26:12.758+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:26:15.004+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T14:27:33.528+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=description sortOrder=DESC
+2024-05-30T14:27:35.979+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=description sortOrder=DESC
+2024-05-30T14:27:37.366+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=description sortOrder=DESC
+2024-05-30T14:27:38.203+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T14:27:49.300+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=description sortOrder=DESC
+2024-05-30T14:28:48.542+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Updating Task with id 69 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
+2024-05-30T14:28:50.160+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Updating Task with id 73 to UpdateTaskDTO [description=null, isCompleted=true, categoryId=null, dueDate=null]
+2024-05-30T14:28:55.941+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=description sortOrder=DESC
+2024-05-30T14:35:32.832+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1400 ms
+2024-05-30T14:39:54.627+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:39:54.645+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:39:54.663+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:39:54.695+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:39:57.287+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:39:57.321+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:39:57.321+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T14:39:57.396+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:40:21.219+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T14:45:46.178+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:45:53.853+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T14:45:55.518+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:56:06.354+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T14:56:07.803+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T14:56:08.469+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T14:56:09.288+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T14:56:10.444+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T14:56:12.403+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T14:58:58.118+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T14:59:42.480+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:00:32.944+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:00:41.122+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:00:45.646+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:00:46.930+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:00:47.784+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:01:23.231+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:01:26.619+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:01:28.722+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:01:30.385+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:01:31.736+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:01:32.940+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:01:33.453+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:01:34.172+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:01:35.579+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:01:37.028+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:01:55.675+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:02:31.750+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:03:00.969+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:02.883+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:04:04.374+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:04:11.569+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:04:13.195+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:04:14.194+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:15.036+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:04:17.432+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:04:18.660+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:25.735+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:04:26.991+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:04:28.671+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:29.657+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:04:35.253+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:04:39.143+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:04:40.505+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:04:42.846+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:04:44.352+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:49.384+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:49.400+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T15:04:49.449+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T15:04:49.450+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:04:53.756+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:04:56.975+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:04:58.101+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:04:59.268+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-7] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:05:00.317+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:05:35.385+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:05:36.243+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:05:37.279+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:05:38.097+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:05:44.778+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:05:48.334+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:05:58.842+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:05:59.993+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:06:01.239+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:06:02.286+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:06:20.089+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:07:01.760+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:07:03.475+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-10] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:07:06.834+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:07:08.569+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:07:30.519+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T15:07:30.553+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:07:30.576+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-4] c.p.todo.category.CategoryController     : Getting All Categorys
+2024-05-30T15:07:30.632+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:07:31.399+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-5] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:07:37.262+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-3] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=9 sortBy=null sortOrder=null
+2024-05-30T15:07:38.571+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-9] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=8 sortBy=null sortOrder=null
+2024-05-30T15:07:39.490+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-2] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=3 sortBy=null sortOrder=null
+2024-05-30T15:07:40.433+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-1] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=6 sortBy=null sortOrder=null
+2024-05-30T15:07:40.964+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-8] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null
+2024-05-30T15:07:42.710+10:00  INFO 23012 --- [todo] [http-nio-8080-exec-6] com.projects.todo.task.TaskController    : Getting All Tasks with categoryId=null sortBy=null sortOrder=null

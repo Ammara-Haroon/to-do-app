@@ -86,10 +86,10 @@ const TasksPage = () => {
     {!isLoading && error && <ErrMsg msg={error} closeMsg={closeMsg}/>}
     {!isLoading && <div className="p-2 min-h-screen w-4/5 border rounded-lg flex-column  bg-stone-100">
       <h1 className="text-xl md:text-4xl font-mono italic text-rose-500 p-2 text-center">To Do List</h1>
-    <Tabs handleClick={getFilteredTasks}/>
+    <Tabs selectedCategory={queryParams.categoryId} handleClick={getFilteredTasks}/>
     <div className="flex justify-end">
       <label className="text-rose-500 text-sm font-semibold" htmlFor="sortOption">Sort by:</label>
-    <select name="sortOption" onChange={sortTasks} className="text-rose-500 text-sm self-end">
+    <select name="sortOption" defaultValue={sortOptions.findIndex(so=>so.sortOrder==queryParams.sortOrder && so.sortBy==queryParams.sortBy)} onChange={sortTasks} className="text-rose-500 text-sm self-end">
       {sortOptions.map((op,index) => <option key={index} value={index}>{op.label}</option>)}
     </select>
     </div>
