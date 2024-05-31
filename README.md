@@ -60,7 +60,9 @@ logging.file.name=application.log
 
 ``` npm run dev```
 
-The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in src\main\java\com\projects\todo\config\WebConfig.java.
+- The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in src\main\java\com\projects\todo\config\WebConfig.java.
+- Swagger API documentation is available at http://localhost:8080/swagger-ui/index.html
+- Application backend logs are saved in application.log files.
 
 ## Design Goals / Approach
 
@@ -85,7 +87,7 @@ The app runs on localhost:5173 by default. If it rus on different port, CORS per
 -   Sorts tasks based on last updated, date of creation, alphabetic order and due date
 -   API points to edit, delete, update tasks and categories with proper error handling messages and server status codes.
 -   Used log4sj to log activity and errors in a log file
--   Used swagger to get documentation for API ed points.
+-   Used swagger to get documentation for API end points.
 
 ## Known issues
 
