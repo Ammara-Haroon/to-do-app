@@ -39,12 +39,12 @@ The purpose of the project is to create a to-do list app having backend with Spr
 1. Add *resources* folder to src\main and create a file *applicaton.properties* with the following content (replace credentials and check localhost and port number for MySQL)
 ``` spring.application.name=todo
 spring.datasource.url=jdbc:mysql://localhost:3306/NAME_OF_DATABASE_FROM_PREVIOUS_STEP
-spring.datasource.username=root
-spring.datasource.password=*****
+spring.datasource.username=root (OR USER_NAME)
+spring.datasource.password=YOUR_PASSWORD
 spring.jpa.hibernate.ddl-auto=update
 logging.pattern.console=%date{ISO8601} %-5level %class{0}:%L -[%M] %msg%n
-logging.file.name=application.log ```
-
+logging.file.name=application.log
+```
 1. To run backend run the spring boot app. Server runs on port 8080 by default.
 1. Go to directory *todo-front-end* and install dependencies
 
