@@ -49,9 +49,11 @@ logging.file.name=application.log
 6. Go to directory *todo-front-end* and install dependencies
 
 ``` npm install```
+
 7. Create an .env file in the directory *todo-front-end* with the following contents.
 
 ```VITE_APP_BACKEND_BASE_URL=http://localhost:8080``` 
+
 8. To run the front-end use:
 
 ``` npm run dev```
