@@ -2,13 +2,13 @@
 
 ## Demo & Snippets
 ### Main Page With Sorted, Completed and Overdue Tasks
-![Overdue and completed tasks](image-3.png)
+![Main Page](image-7.png)
 ### Add/Edit Task Form
 ![Form](image-1.png)
 ### Category Filtered Tasks
-![Category](image-2.png)
+![Category](image-8.png)
 ### Swagger API Doc
-![alt text](image-4.png)
+![API Doc](image-4.png)
 ## Requirements / Purpose
 
 ### Purpose 
@@ -29,10 +29,27 @@ The purpose of the project is to create a to-do list app having backend with Spr
 * MySQL (Database)
 
 ## Build Steps
-To run front-end use and open the host link:
+1. Clone the repo
+``` git clone https://github.com/Ammara-Haroon/todo.git```
+1. Go to the repo folder and install dependencies
+``` npm install```
+1. Create a database in MySQL to hold app data  
+1. Add *resources* folder to src\main and create a file *applicaton.properties* with the following content (replace credentials and check localhost and port number for MySQL)
+``` spring.application.name=todo
+    spring.datasource.url=jdbc:mysql://localhost:3306/NAME_OF_DATABASE_FROM_PREVIOUS_STEP
+    spring.datasource.username=root
+    spring.datasource.password=*****
+    spring.jpa.hibernate.ddl-auto=update
+    logging.pattern.console=%date{ISO8601} %-5level %class{0}:%L -[%M] %msg%n
+    logging.file.name=application.log ```
+1. To run backend run the spring boot app. Server runs on port 8080 by default.
+1. Go to directory *todo-front-end* and install dependencies
+``` npm install```
+1. Create an .env file in the directory *todo-front-end* with the following contents.
+```VITE_APP_BACKEND_BASE_URL=http://localhost:8080``` 
+1. To run the front-end use:
 ``` npm run dev```
-
-To run backend run the spring boot app. Server runs on port 8080.
+The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in src\main\java\com\projects\todo\config\WebConfig.java.
 
 ## Design Goals / Approach
 

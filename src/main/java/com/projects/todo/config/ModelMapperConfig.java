@@ -5,9 +5,6 @@ import org.modelmapper.spi.MappingContext;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.projects.todo.category.Category;
-import com.projects.todo.category.CreateCategoryDTO;
 import com.projects.todo.task.Task;
 import com.projects.todo.task.UpdateTaskDTO;
 
