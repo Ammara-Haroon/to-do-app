@@ -32,9 +32,11 @@ The purpose of the project is to create a to-do list app having backend with Spr
 1. Clone the repo
 
 ``` git clone https://github.com/Ammara-Haroon/todo.git```
+
 2. Go to the repo folder and install dependencies
 
 ``` npm install```
+
 3. Create a database in MySQL to hold app data  
 4. Add *resources* folder to src\main and create a file *applicaton.properties* with the following content (replace credentials and check localhost and port number for MySQL)
 ``` spring.application.name=todo
