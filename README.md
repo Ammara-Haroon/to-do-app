@@ -145,6 +145,8 @@ logging.file.name=application.log
 
 ### 31/05/2024 - Added responsiveness for smaller screens
 
+### 04/06/2024 - Added unit tests
+
 ## Struggles
 
 - I needed to tweak ModelMapper to ensure that UpdateTaskDTO does not add a category that is invalid.
