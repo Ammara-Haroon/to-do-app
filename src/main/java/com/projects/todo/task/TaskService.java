@@ -45,10 +45,7 @@ public class TaskService {
 
   }
 
-  // public List<Task> findAll(Boolean isCompleted, Long categoryId, SortBy
-  // sortBy, SortOrder sortOrder) {
   public List<Task> findAll(Long categoryId, SortBy sortBy, SortOrder sortOrder) {
-    // Sort sort = null;
     Sort sort = Sort.by("isCompleted").ascending();
     if (sortBy != null) {
       if (sortOrder.equals(SortOrder.ASC)) {
@@ -65,21 +62,6 @@ public class TaskService {
     }
 
     return this.repo.findByCategoryId(categoryId, sort);
-
-    // // if (isCompleted == null && categoryId == null) {
-    // // return this.repo.findAll(sort);
-    // // }
-
-    // if (categoryId == null) {
-    // return this.repo.findByIsCompleted(isCompleted, sort);
-    // }
-
-    // if (isCompleted == null) {
-    // return this.repo.findByCategoryId(categoryId, sort);
-    // }
-    // return this.repo.findByIsCompletedAndCategoryId(isCompleted, categoryId,
-    // sort);
-
   }
 
   public Optional<Task> findById(Long id) {

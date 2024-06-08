@@ -1,6 +1,8 @@
 package com.projects.todo.category;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +27,26 @@ public class CategoryService {
   }
 
   public List<Category> findAll() {
+    if(this.repo.count() == 0) setupDefaultCategories();
+    
     return this.repo.findAll(Sort.by("name").ascending());
   }
+
+  private void setupDefaultCategories() {
+    Map<String,String> defaultCategories = new HashMap<String,String>();
+    defaultCategories.put("Home","/src/assets/home-icon.png");
+    defaultCategories.put("Office","/src/assets/briefcase-icon.png");
+    defaultCategories.put("Shopping","/src/assets/basket-icon.png");
+    defaultCategories.put("Urgent","/src/assets/siren-icon.png");
+  
+    for(Map.Entry<String,String>entry : defaultCategories.entrySet()){
+      Category newCategory = new Category();
+      newCategory.setName(entry.getKey());
+      newCategory.setIcon(entry.getValue());
+      this.repo.save(newCategory);
+    }
+  }
+  
 
   public Optional<Category> findById(Long id) {
     return this.repo.findById(id);

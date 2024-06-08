@@ -10,6 +10,9 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./config/setup.js",
   },
+  server: {
+    host: true,
+  },
   css: {
     postcss: {
       plugins: [tailwindcss()],
