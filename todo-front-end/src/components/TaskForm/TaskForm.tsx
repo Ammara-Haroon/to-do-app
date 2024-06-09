@@ -79,6 +79,7 @@ const TaskForm = ({ mode, task, closeForm, saveTask }: TaskFormProps) => {
                           className={descriptionStyleClass}
                           name="description"
                           id="description"
+                          data-testid="textArea"
                           defaultValue={task?.description}
                         />
                       </div>

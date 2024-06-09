@@ -5,6 +5,8 @@ import "@testing-library/jest-dom";
 import * as taskServices from "../services/task-services";
 import * as categoryServices from "../services/category-services";
 import { Task } from "../services/api-responses.interface";
+import React from "react";
+import userEvent from "@testing-library/user-event";
 
 const testTasks: Task[] = [
   {
@@ -167,6 +169,54 @@ describe("Categories Tests", () => {
       testCategories.forEach((cat) =>
         expect(screen.getByAltText(cat.name)).toBeInTheDocument()
       );
+    });
+  });
+
+  describe("User Action Tests", () => {
+    it("Should delete the task when delete button is clicked for the task", async () => {
+      const spyGetTasks = vi.spyOn(categoryServices, "getAllCategories");
+      spyGetTasks.mockResolvedValue(testCategories);
+
+      render(<TasksPage />);
+      waitFor(async () => {
+        const deleteBtns = screen.getAllByTestId("deleteBtn");
+        expect(deleteBtns).toBeInTheDocument();
+        const user = userEvent.setup();
+        await user.click(deleteBtns[0]);
+        expect(deleteBtns[0]).not.toBeInTheDocument();
+      });
+    });
+
+    it("Should add the task with description when add button is clicked", async () => {
+      render(<TasksPage />);
+
+      waitFor(async () => {
+        const addBtn = screen.getByTestId("addTaskBtn");
+        const input = screen.getByPlaceholderText("new task...");
+        const user = userEvent.setup();
+        await user.type(input, "my new task");
+        await user.click(addBtn);
+        expect(input.innerText).toBe("");
+        expect("my new task").toBeInTheDocument();
+      });
+    });
+
+    it("Should add the task with description when add button is clicked", async () => {
+      render(<TasksPage />);
+
+      waitFor(async () => {
+        const editBtn = screen.getByTestId("editBtn");
+        const user = userEvent.setup();
+        await user.click(editBtn);
+        const editForm = screen.getByTestId("editForm");
+        expect(editForm).toBeInTheDocument();
+        const saveBtn = screen.getByTestId("saveBtn");
+        const input = screen.getByTestId("textArea");
+        await user.type(input, "my editted task");
+        await user.click(saveBtn);
+        expect(editForm).not.toBeInTheDocument();
+        expect("my editted task").toBeInTheDocument();
+      });
     });
   });
 });

@@ -146,6 +146,7 @@ const TasksPage = () => {
               <button
                 className="p-1 hover:shadow-lg border rounded  border-transparent hover:border-rose-100 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 type="submit"
+                data-testid="addTaskBtn"
               >
                 <FontAwesomeIcon icon={faAdd} size="lg" />
               </button>
