@@ -1,7 +1,7 @@
-name: pull_request_test
+name: test
 
 on:
-  commit:
+  push:
     branches: [main]
 
 jobs:
