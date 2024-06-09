@@ -1,5 +1,5 @@
 # To-Do App
-
+[![test](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml/badge.svg)](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml)
 ## Demo & Snippets
 
 To view the demo through docker, pull the repo and run the following command int the root directory
