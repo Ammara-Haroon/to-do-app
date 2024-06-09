@@ -3,7 +3,9 @@ name: test
 on:
   push:
     branches: [main]
-
+defaults:
+  run:
+    working-directory: todo-front-end
 jobs:
   test:
     runs-on: ubuntu-latest
