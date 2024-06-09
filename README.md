@@ -6,7 +6,7 @@ To view the demo through docker, pull the repo and run the following command int
 
 `docker compose up --build`
 
-App will be available at http://localhost:5173
+App will be available at http://localhost:5173 . Reset the assigned ports in compose.yaml if required.
 
 ### Main Page With Sorted, Completed and Overdue Tasks
 
