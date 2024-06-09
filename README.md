@@ -2,6 +2,12 @@
 
 ## Demo & Snippets
 
+To view the demo through docker, pull the repo and run the following command int the root directory
+
+`docker compose up --build`
+
+App will be available at http://localhost:5173
+
 ### Main Page With Sorted, Completed and Overdue Tasks
 
 ![Main Page](image-7.png)
@@ -146,6 +152,8 @@ logging.file.name=application.log
 ### 31/05/2024 - Added responsiveness for smaller screens
 
 ### 04/06/2024 - Added unit tests
+
+### 09/06/2024 - Added docker files
 
 ## Struggles
 
