@@ -7,19 +7,18 @@ defaults:
   run:
     working-directory: todo-front-end
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Checkout code
-        uses: actions/checkout@v2
+
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 18
+
       - name: Cache Node.js modules
         id: cache-node-modules
         uses: actions/cache@v2
@@ -32,7 +31,7 @@ jobs:
       - name: Install Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
-      
+
       - name: Install Dev Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm -D install
