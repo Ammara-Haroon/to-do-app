@@ -32,10 +32,17 @@ jobs:
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
+<<<<<<< HEAD
       - name: Install Dev Dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm -D install
 
+=======
+      - name: Install Dependencies
+        run: npm -D install
+
+
+>>>>>>> 5eeff30027633edb5ba363ac3d8dfcdbb16d52f9
       - name: Run Tests
         run: npm test
 
