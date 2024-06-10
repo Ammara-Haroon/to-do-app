@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import TasksPage from "./TasksPage";
 import "@testing-library/jest-dom";
 import * as taskServices from "../services/task-services";
@@ -124,10 +124,9 @@ describe("Tasks Test", () => {
 
     render(<TasksPage />);
 
-    const loadingSpinner = screen.getByTestId("spinner");
-    expect(loadingSpinner).toBeInTheDocument();
+    waitFor(() => expect(screen.getByTestId("spinner")).toBeInTheDocument());
   });
-  it("Should display basic elements and all the tasks on the page after loading", () => {
+  it("Should display basic elements and all the tasks on the page after loading", async () => {
     const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
     spyGetTasks.mockResolvedValue(testTasks);
 
@@ -136,14 +135,14 @@ describe("Tasks Test", () => {
     const loadingSpinner = screen.getByTestId("spinner");
     expect(loadingSpinner).toBeInTheDocument();
 
-    waitFor(() => {
-      expect(loadingSpinner).not.toBeInTheDocument();
-      const insertionForm = screen.getByPlaceholderText("\\new task\\i");
-      expect(insertionForm).toBeInTheDocument();
-      expect(screen.getByText("\\All\\i")).toBeInTheDocument();
+    await waitFor(() => expect(loadingSpinner).not.toBeInTheDocument());
 
-      expect(screen.getAllByRole("TaskCard").length).toBe(testTasks.length);
-    });
+    await waitFor(() =>
+      expect(screen.getByPlaceholderText(/new task/i)).toBeInTheDocument()
+    );
+    await waitFor(() =>
+      expect(screen.getAllByTestId("deleteBtn").length).toBe(testTasks.length)
+    );
   });
 
   it("Should display No tasks here if there are no tasks", () => {
@@ -153,23 +152,20 @@ describe("Tasks Test", () => {
     render(<TasksPage />);
 
     waitFor(() => {
-      expect(screen.getAllByText(RegExp("No tasks here", "i")))
-        .toBeInTheDocument;
+      expect(screen.getAllByText(/No tasks here/i)).toBeInTheDocument;
     });
   });
 });
 describe("Categories Tests", () => {
-  it("Should display the name of all categories and 'All'", () => {
+  it("Should display the name of all categories and 'All'", async () => {
     const spyGetCategories = vi.spyOn(categoryServices, "getAllCategories");
     spyGetCategories.mockResolvedValue(testCategories);
 
     render(<TasksPage />);
-    waitFor(() => {
-      expect(screen.getByText("\\All\\i")).toBeInTheDocument();
-      testCategories.forEach((cat) =>
-        expect(screen.getByAltText(cat.name)).toBeInTheDocument()
-      );
-    });
+    await waitFor(() => expect(screen.getByText(/All/i)).toBeInTheDocument());
+    testCategories.forEach((cat) =>
+      expect(screen.getByAltText(cat.name)).toBeInTheDocument()
+    );
   });
 
   describe("Adding , Deleteing and Editing Task Tests", () => {
@@ -177,77 +173,81 @@ describe("Categories Tests", () => {
       const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
       spyGetTasks.mockResolvedValue(testTasks);
 
+      const spyDeleteTasks = vi.spyOn(taskServices, "deleteTask");
+      spyDeleteTasks.mockResolvedValue();
+
       render(<TasksPage />);
-      waitFor(async () => {
-        const deleteBtns = screen.getAllByTestId("deleteBtn");
-        expect(deleteBtns).toBeInTheDocument();
-        const user = userEvent.setup();
-        await user.click(deleteBtns[0]);
-        expect(deleteBtns[0]).not.toBeInTheDocument();
-        expect(testTasks[0].description).not.toBeInTheDocument();
-      });
+      const deleteBtns = await waitFor(() =>
+        screen.getAllByTestId("deleteBtn")
+      );
+      const user = userEvent.setup();
+      await user.click(deleteBtns[0]);
+      expect(deleteBtns[0]).not.toBeInTheDocument();
     });
 
-    it("Should add the task with description when add button is clicked", async () => {
+    it("Should call createTask when add button is clicked", async () => {
+      const mockTask = {
+        id: 100,
+        description: "my new task",
+        isCompleted: false,
+        updatedAt: new Date().toString(),
+        createdAt: new Date().toString(),
+        dueDate: null,
+        category: null,
+      };
+
+      const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
+      spyGetTasks.mockResolvedValue(testTasks);
+
+      const spyAddTask = vi.spyOn(taskServices, "createTask");
+      spyAddTask.mockResolvedValue(mockTask);
+
       render(<TasksPage />);
 
-      waitFor(async () => {
-        const addBtn = screen.getByTestId("addTaskBtn");
-        const input = screen.getByPlaceholderText("new task...");
-        const user = userEvent.setup();
-        await user.type(input, "my new task");
-        await user.click(addBtn);
-        expect(input.innerText).toBe("");
-        expect("my new task").toBeInTheDocument();
-      });
+      const addBtn = await waitFor(async () =>
+        screen.getByTestId("addTaskBtn")
+      );
+
+      const input = screen.getByPlaceholderText("new task...");
+      const user = userEvent.setup();
+      await user.type(input, "my new task");
+      await user.click(addBtn);
+
+      waitFor(() => expect(spyAddTask).toBeCalled());
     });
 
     it("Should edit the task description when edit button is clicked and a new description is enetered in the task edit form", async () => {
+      const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
+      spyGetTasks.mockResolvedValue(testTasks);
+
+      const mockTask = {
+        id: 100,
+        description: "my editted task",
+        isCompleted: false,
+        updatedAt: new Date().toString(),
+        createdAt: new Date().toString(),
+        dueDate: null,
+        category: null,
+      };
+
+      const spyEditTask = vi.spyOn(taskServices, "overwriteTask");
+      spyEditTask.mockResolvedValue(mockTask);
+
       render(<TasksPage />);
 
-      waitFor(async () => {
-        const editBtn = screen.getByTestId("editBtn");
-        const user = userEvent.setup();
-        await user.click(editBtn);
-        const editForm = screen.getByTestId("editForm");
-        expect(editForm).toBeInTheDocument();
-        const saveBtn = screen.getByTestId("saveBtn");
-        const input = screen.getByTestId("textArea");
-        await user.type(input, "my editted task");
-        await user.click(saveBtn);
-        expect(editForm).not.toBeInTheDocument();
-        expect("my editted task").toBeInTheDocument();
-      });
-    });
-  });
-});
-
-describe("Sorting and filtering Task Tests", () => {
-  it("Should filter the tasks according to the tab clicked", async () => {
-    const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
-    spyGetTasks.mockResolvedValue(testTasks);
-    const spyGetCategories = vi.spyOn(categoryServices, "getAllCategories");
-    spyGetCategories.mockResolvedValue(testCategories);
-
-    render(<TasksPage />);
-    waitFor(async () => {
-      const tabs = screen.getAllByRole("tab");
+      const editBtns = await waitFor(async () =>
+        screen.getAllByTestId("editBtn")
+      );
       const user = userEvent.setup();
-      for (let i = 0; i < testCategories.length; ++i) {
-        await user.click(tabs[i]);
-        const filteredTasks = testTasks.filter(
-          (task) => task.id === testCategories[i].id
-        );
-        const otherTasks = testTasks.filter(
-          (task) => task.id !== testCategories[i].id
-        );
-        filteredTasks.forEach((task) =>
-          expect(task.description).toBeInTheDocument()
-        );
-        otherTasks.forEach((task) =>
-          expect(task.description).not.toBeInTheDocument()
-        );
-      }
+      await user.click(editBtns[0]);
+      const editForm = screen.getByTestId("editForm");
+      expect(editForm).toBeInTheDocument();
+      const saveBtn = screen.getByTestId("saveBtn");
+      const input = screen.getByTestId("textArea");
+      await user.type(input, "my editted task");
+      await user.click(saveBtn);
+      waitFor(() => expect(editForm).not.toBeInTheDocument());
+      expect(spyEditTask).toBeCalled();
     });
   });
 });

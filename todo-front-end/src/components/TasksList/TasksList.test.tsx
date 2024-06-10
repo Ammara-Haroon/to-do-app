@@ -4,6 +4,7 @@ import TasksList from "./TasksList";
 
 import "@testing-library/jest-dom";
 import { Task } from "../../services/api-responses.interface";
+import React from "react";
 
 const testTasks: Task[] = [
   {
