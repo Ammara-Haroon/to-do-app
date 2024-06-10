@@ -112,6 +112,7 @@ const TasksPage = () => {
               Sort by:
             </label>
             <select
+              data-testid="sortSelect"
               name="sortOption"
               defaultValue={sortOptions.findIndex(
                 (so) =>

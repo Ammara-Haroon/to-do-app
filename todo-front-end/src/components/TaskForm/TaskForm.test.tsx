@@ -8,6 +8,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import TaskForm from "./TaskForm";
 import { wait } from "@testing-library/user-event/dist/cjs/utils/index.js";
+import React from "react";
 
 describe("Task Form Tests", () => {
   it("Should display edit task when in edit mode", async () => {

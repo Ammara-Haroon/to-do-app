@@ -7,6 +7,7 @@ import {
   ICategoriesContext,
 } from "../../context/CategoriesContext";
 import { Category } from "../../services/api-responses.interface";
+import React from "react";
 
 const testCategories: Category[] = [
   {
@@ -46,7 +47,8 @@ describe("Tabs Tests", () => {
     );
 
     testCategories.forEach((cat) => {
-      expect(screen.getByAltText(cat.name)).toBeInTheDocument();
+      const categoryTab = screen.getByAltText(cat.name);
+      expect(categoryTab).toBeInTheDocument();
     });
   });
 

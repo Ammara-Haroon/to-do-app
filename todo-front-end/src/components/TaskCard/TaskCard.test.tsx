@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import TaskCard from "./TaskCard";
 import { TaskPartial } from "../../services/api-responses.interface";
+import React from "react";
 
 const testTask = {
   id: 69,

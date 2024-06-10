@@ -153,17 +153,17 @@ describe("Tasks Test", () => {
     render(<TasksPage />);
 
     waitFor(() => {
-      expect(screen.getAllByText("No tasks herei")).toBeInTheDocument;
+      expect(screen.getAllByText(RegExp("No tasks here", "i")))
+        .toBeInTheDocument;
     });
   });
 });
 describe("Categories Tests", () => {
   it("Should display the name of all categories and 'All'", () => {
-    const spyGetTasks = vi.spyOn(categoryServices, "getAllCategories");
-    spyGetTasks.mockResolvedValue(testCategories);
+    const spyGetCategories = vi.spyOn(categoryServices, "getAllCategories");
+    spyGetCategories.mockResolvedValue(testCategories);
 
     render(<TasksPage />);
-
     waitFor(() => {
       expect(screen.getByText("\\All\\i")).toBeInTheDocument();
       testCategories.forEach((cat) =>
@@ -172,10 +172,10 @@ describe("Categories Tests", () => {
     });
   });
 
-  describe("User Action Tests", () => {
+  describe("Adding , Deleteing and Editing Task Tests", () => {
     it("Should delete the task when delete button is clicked for the task", async () => {
-      const spyGetTasks = vi.spyOn(categoryServices, "getAllCategories");
-      spyGetTasks.mockResolvedValue(testCategories);
+      const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
+      spyGetTasks.mockResolvedValue(testTasks);
 
       render(<TasksPage />);
       waitFor(async () => {
@@ -184,6 +184,7 @@ describe("Categories Tests", () => {
         const user = userEvent.setup();
         await user.click(deleteBtns[0]);
         expect(deleteBtns[0]).not.toBeInTheDocument();
+        expect(testTasks[0].description).not.toBeInTheDocument();
       });
     });
 
@@ -201,7 +202,7 @@ describe("Categories Tests", () => {
       });
     });
 
-    it("Should add the task with description when add button is clicked", async () => {
+    it("Should edit the task description when edit button is clicked and a new description is enetered in the task edit form", async () => {
       render(<TasksPage />);
 
       waitFor(async () => {
@@ -217,6 +218,36 @@ describe("Categories Tests", () => {
         expect(editForm).not.toBeInTheDocument();
         expect("my editted task").toBeInTheDocument();
       });
+    });
+  });
+});
+
+describe("Sorting and filtering Task Tests", () => {
+  it("Should filter the tasks according to the tab clicked", async () => {
+    const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
+    spyGetTasks.mockResolvedValue(testTasks);
+    const spyGetCategories = vi.spyOn(categoryServices, "getAllCategories");
+    spyGetCategories.mockResolvedValue(testCategories);
+
+    render(<TasksPage />);
+    waitFor(async () => {
+      const tabs = screen.getAllByRole("tab");
+      const user = userEvent.setup();
+      for (let i = 0; i < testCategories.length; ++i) {
+        await user.click(tabs[i]);
+        const filteredTasks = testTasks.filter(
+          (task) => task.id === testCategories[i].id
+        );
+        const otherTasks = testTasks.filter(
+          (task) => task.id !== testCategories[i].id
+        );
+        filteredTasks.forEach((task) =>
+          expect(task.description).toBeInTheDocument()
+        );
+        otherTasks.forEach((task) =>
+          expect(task.description).not.toBeInTheDocument()
+        );
+      }
     });
   });
 });
