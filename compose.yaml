@@ -13,7 +13,7 @@ services:
       MYSQL_ROOT_PASSWORD: password
   server:
     build:
-      context: .
+      context: ./todo-back-end
     ports:
       - 8080:8080
     restart: always

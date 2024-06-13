@@ -1,5 +1,7 @@
 # To-Do App
+
 [![test](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml/badge.svg)](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml)
+
 ## Demo & Snippets
 
 To view the demo through docker, pull the repo and run the following command int the root directory
@@ -55,12 +57,12 @@ The purpose of the project is to create a to-do list app having backend with Spr
 
 ` git clone https://github.com/Ammara-Haroon/todo.git`
 
-2. Go to the repo folder and install dependencies
+2. Go to the repo folder and to directory _todo-back-end_ and install dependencies
 
 ` npm install`
 
 3. Create a database in MySQL to hold app data
-4. Add _resources_ folder to src\main and create a file _applicaton.properties_ with the following content (replace credentials and check localhost and port number for MySQL)
+4. Add _resources_ folder to todo-back-end\src\main and create a file _applicaton.properties_ with the following content (replace credentials and check localhost and port number for MySQL)
 
 ```spring.application.name=todo
 spring.datasource.url=jdbc:mysql://localhost:3306/NAME_OF_DATABASE_FROM_PREVIOUS_STEP
@@ -84,7 +86,7 @@ logging.file.name=application.log
 
 ` npm run dev`
 
-- The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in src\main\java\com\projects\todo\config\WebConfig.java.
+- The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in todo-back-end\src\main\java\com\projects\todo\config\WebConfig.java.
 - Swagger API documentation is available at http://localhost:8080/swagger-ui/index.html
 - Application backend logs are saved in application.log files.
 
