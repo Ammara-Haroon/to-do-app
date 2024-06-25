@@ -46,7 +46,7 @@ const TasksPage = () => {
     setError(null);
     getAllTasks(queryParams)
       .then((data) => setTasks(data))
-      .catch((e) => setError(e.message))
+      .catch((e) => setError("woops...something went wrong !"))
       .finally(() => setIsLoading(false));
   }, [queryParams]);
 

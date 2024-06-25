@@ -28,7 +28,6 @@ const TaskForm = ({ mode, task, closeForm, saveTask }: TaskFormProps) => {
   const { categories } = useCategoriesContext();
   const [isCompleted, setIsCompleted] = useState(task?.isCompleted);
   const [dueDate, setDueDate] = useState<Date | null>(task?.dueDate ?? null);
-
   let descriptionStyleClass =
     "resize-none w-11/12 text-ellipsis px-2 text-lg text-rose-400 text-ellipsis";
   descriptionStyleClass += isCompleted ? " line-through" : "";
@@ -126,7 +125,7 @@ const TaskForm = ({ mode, task, closeForm, saveTask }: TaskFormProps) => {
                               selected={dueDate}
                               dateFormat="dd/MM/yyyy"
                               locale="en-AU"
-                              onChange={(date: Date) => setDueDate(date)}
+                              onChange={(date: Date) => date >= new Date() ? setDueDate(date):setDueDate(new Date())}
                             />
                             <button
                               className="text-center rounded-md  px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-700  sm:w-auto bg-rose-500"

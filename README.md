@@ -3,11 +3,8 @@
 [![test](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml/badge.svg)](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml)
 
 ## Demo & Snippets
-
-To view the demo through docker, pull the repo and run the following command int the root directory
-
+To view the demo through docker, clone the repo and run the following command int the root directory
 `docker compose up --build`
-
 App will be available at http://localhost:5173 . Reset the assigned ports in compose.yaml if required.
 
 ### Main Page With Sorted, Completed and Overdue Tasks

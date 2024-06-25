@@ -250,4 +250,12 @@ describe("Categories Tests", () => {
       expect(spyEditTask).toBeCalled();
     });
   });
+  it("Should display an error message if fetch request threw an error", () => {
+    const spyGetTasks = vi.spyOn(taskServices, "getAllTasks");
+    spyGetTasks.mockRejectedValue(new Error());
+
+    render(<TasksPage />);
+
+    waitFor(() => expect(screen.getByTestId("error")).toBeInTheDocument());
+  });
 });
