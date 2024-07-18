@@ -1,11 +1,10 @@
 # To-Do App
 
+https://todo-uublo3ikqq-uc.a.run.app/
+
 [![test](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml/badge.svg)](https://github.com/Ammara-Haroon/todo/actions/workflows/main.yml)
 
 ## Demo & Snippets
-To view the demo through docker, clone the repo and run the following command int the root directory
-`docker compose up --build`
-App will be available at http://localhost:5173 . Reset the assigned ports in compose.yaml if required.
 
 ### Main Page With Sorted, Completed and Overdue Tasks
 
@@ -47,6 +46,12 @@ The purpose of the project is to create a to-do list app having backend with Spr
 - JAVA Spring (back-end)
 - Typescript (front-end)
 - MySQL (Database)
+
+## Docker Deployment
+
+To view the demo through docker, clone the repo and run the following command int the root directory
+`docker compose up --build`
+App will be available at http://localhost:5173 . Reset the assigned ports in compose.yaml if required.
 
 ## Build Steps
 
