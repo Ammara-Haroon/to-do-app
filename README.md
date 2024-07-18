@@ -51,7 +51,7 @@ The purpose of the project is to create a to-do list app having backend with Spr
 
 To view the demo through docker, clone the repo and run the following command int the root directory
 `docker compose up --build`
-App will be available at http://localhost:5173 . Reset the assigned ports in compose.yaml if required.
+App will be available at http://localhost:5173 . API will be avaialable at http://localhost:8080 . Swagger API documentation is available at http://localhost:8080/swagger-ui/index.html . Reset the assigned ports in compose.yaml if required.
 
 ## Build Steps
 
@@ -88,7 +88,7 @@ logging.file.name=application.log
 
 ` npm run dev`
 
-- The app runs on localhost:5173 by default. If it rus on different port, CORS permissions need to be reset in todo-back-end\src\main\java\com\projects\todo\config\WebConfig.java.
+- The app runs on localhost:5173 by default. If it runs on different port, CORS permissions need to be reset in todo-back-end\src\main\java\com\projects\todo\config\WebConfig.java.
 - Swagger API documentation is available at http://localhost:8080/swagger-ui/index.html
 - Application backend logs are saved in application.log files.
 
